@@ -17,6 +17,7 @@ public class CheckInDesk {
         Wartebereich wartebereich = new Wartebereich();
         Reader[] reader = new Reader[3];
         FederalPoliceOfficer federalPoliceOfficer = new FederalPoliceOfficer();
+
     }
 
 
