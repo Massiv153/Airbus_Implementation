@@ -26,13 +26,14 @@ public class CheckInDesk {
 
     public void processPassenger(Passenger passenger, FederalPoliceOfficer officer, AtomicInteger sequenceID) {
         if (passenger.authenticateRandomly()) {
-            if (passenger.hasWarrant()) {
-                officer.arrestedPassengers(passenger);
-            } else {
-                for (Baggage baggage : passenger.getBaggageList()) {
-                    conveyorBelt.processBaggage(baggage, printer, sequenceID);
-                }
-                printer.printBoardingPass(passenger);
+            switch (passenger.hasWarrant()){
+                case Warrent.YES:
+                    officer.arrestedPassengers(passenger);
+                case Warrent.NO:
+                    for (Baggage baggage : passenger.getBaggageList()) {
+                        conveyorBelt.processBaggage(baggage, printer, sequenceID);
+                    }
+                    printer.printBoardingPass(passenger);
             }
         }
     }

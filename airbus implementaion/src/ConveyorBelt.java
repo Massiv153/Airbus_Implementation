@@ -6,7 +6,7 @@ public class ConveyorBelt {
     private Baggage baggage;
 
     public void processBaggage(Baggage baggage, Printer printer, AtomicInteger sequenceID) {
-        baggage.getBaggageWeight();
+        double weight = baggage.getBaggageWeight();
         BaggageTag tag = new BaggageTag(sequenceID.incrementAndGet());
         printer.printBaggageTag(tag);
 
