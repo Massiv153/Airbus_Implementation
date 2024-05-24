@@ -1,4 +1,5 @@
 public class BoardingPass {
+
     private final String seat;
     private final Passenger passenger;
 
