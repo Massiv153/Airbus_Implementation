@@ -13,6 +13,7 @@ public class CSVReader {
     private String[] tokenArray;
     List<Passenger> passengers = new ArrayList<>();
     TreeMap<String, Ticket> tickets= new TreeMap<>();
+    List<Baggage> baggages = new ArrayList<>();
 
     public CSVReader(){
         readFromCss();
@@ -56,6 +57,10 @@ public class CSVReader {
         return tickets;
     }
 
+    public List<Baggage> getBaggages(){
+        return baggages;
+    }
+
 
     private Passenger createPassenger(){
         //Name
@@ -75,12 +80,11 @@ public class CSVReader {
 
         //Baggage
         String baggageCountString = tokenArray[16];
-        List<Baggage> baggages = new ArrayList<>();
         int baggageCount = Integer.parseInt(baggageCountString);
         String[] weightToken = tokenArray[17].split(" ");
         for (int i = 0; i < baggageCount; i++) {
             double weight = Double.parseDouble(weightToken[i]);
-            baggages.add(new Baggage(weight));
+            baggages.add(new Baggage(weight, determinePriority(tokenArray[14])));
         }
         //Iris
         String humaniris = tokenArray[6];
@@ -88,10 +92,14 @@ public class CSVReader {
         //Fingerprint
         String humanfingerprint = tokenArray[7];
 
+        //Warrent
+        Warrent warrent = determineWarrent(tokenArray[18]);
+
+
 
 
         //Passenger erstellen
-        return new Passenger(firstName, lastName, gender, dateOfBirth, passportID, baggages, humaniris, humanfingerprint);
+        return new Passenger(firstName, lastName, gender, dateOfBirth, passportID, baggages, humaniris, humanfingerprint, warrent);
     }
 
     private Ticket createTicket(){
@@ -149,4 +157,26 @@ public class CSVReader {
         return arrival;
 
     }
+    private Priority determinePriority(String bookingClass){
+        switch (bookingClass) {
+            case "BUSINESS":
+                return Priority.BUSINESS;
+            case "PREMIUM_ECONOMY":
+                return Priority.PREMIUM_ECONOMY;
+            default:
+                return Priority.ECONOMY;
+        }
+    }
+
+    private Warrent determineWarrent(String warrentString){
+        switch (warrentString){
+            case "YES":
+                return Warrent.YES;
+            case "NO":
+                return Warrent.NO;
+            default:
+                return Warrent.NO;
+        }
+    }
+
 }

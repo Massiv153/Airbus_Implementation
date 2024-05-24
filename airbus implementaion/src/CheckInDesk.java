@@ -4,7 +4,7 @@ public class CheckInDesk {
     private Warteschlange warteschlange;
     private Printer printer;
     private ConveyorBelt conveyorBelt;
-    private Lager lager;
+    private BaggageLager lager;
     private Wartebereich wartebereich;
     private Reader[] reader;
     private FederalPoliceOfficer federalPoliceOfficer;
@@ -13,7 +13,7 @@ public class CheckInDesk {
         Warteschlange warteschlange = new Warteschlange();
         Printer printer = new Printer();
         ConveyorBelt conveyorBelt = new ConveyorBelt();
-        Lager lager = new Lager();
+        BaggageLager lager = new BaggageLager();
         Wartebereich wartebereich = new Wartebereich();
         Reader[] reader = new Reader[3];
         FederalPoliceOfficer federalPoliceOfficer = new FederalPoliceOfficer();
