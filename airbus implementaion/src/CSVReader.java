@@ -1,7 +1,7 @@
-import javax.xml.crypto.Data;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
@@ -11,10 +11,15 @@ import java.util.TreeMap;
 public class CSVReader {
     private LocalDate dateOfBirth;
     private String[] tokenArray;
+    List<Passenger> passengers = new ArrayList<>();
+    TreeMap<String, Ticket> tickets= new TreeMap<>();
 
-    public Data readFromCss(){
-        List<Passenger> passengers = new ArrayList<>();
-        TreeMap<String, Ticket> tickets= new TreeMap<>();
+    public CSVReader(){
+        readFromCss();
+    }
+
+    public void readFromCss(){
+        PassengerTicketMap passengerTicketMap = new PassengerTicketMap();
 
         try {
             String line;
@@ -26,21 +31,32 @@ public class CSVReader {
                 if (!role.equals("Passenger")) {
                     continue;
                 }
+                //passenger erstellen und array list hinzufügen
                 Passenger passenger = createPassenger();
+                passengers.add(passenger);
+                //ticket erstellen und Treemap hinzufügen
                 Ticket ticket = createTicket();
-
+                tickets.put(ticket.getUuid(),ticket);
+                passenger.setTicket(ticket);
+                passengerTicketMap.add(passenger, ticket);
 
 
             }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        return new Data(passengers, tickets) {
-        };
-    }
-    public TreeMap<String, Ticket> ticketTreeMap(){
 
     }
+
+    public List<Passenger> getPassengers(){
+        return passengers;
+    }
+
+    public TreeMap<String, Ticket> getTickets(){
+        return tickets;
+    }
+
+
     private Passenger createPassenger(){
         //Name
         String[] nameToken = tokenArray[2].split(" ");
@@ -62,17 +78,55 @@ public class CSVReader {
         List<Baggage> baggages = new ArrayList<>();
         int baggageCount = Integer.parseInt(baggageCountString);
         String[] weightToken = tokenArray[17].split(" ");
-        for (int i = 0; i < baggageCount; i++){
+        for (int i = 0; i < baggageCount; i++) {
             double weight = Double.parseDouble(weightToken[i]);
             baggages.add(new Baggage(weight));
         }
+        //Iris
+        String humaniris = tokenArray[6];
+
+        //Fingerprint
+        String humanfingerprint = tokenArray[7];
+
+
+
         //Passenger erstellen
-        System.out.println(firstName);
-        return new Passenger(firstName, lastName, gender, dateOfBirth, passportID, baggages);
+        return new Passenger(firstName, lastName, gender, dateOfBirth, passportID, baggages, humaniris, humanfingerprint);
     }
 
     private Ticket createTicket(){
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+        //uuid
+        String uuid = tokenArray [0];
+
+        // bookingID
+        String bookingID = tokenArray[8];
+
+        // flight
+        String flight = tokenArray[9];
+
+        // from
+        String from = tokenArray[10];
+
+        // to
+        String to = tokenArray[11];
+
+        // departure
+        LocalTime departure = LocalTime.parse(tokenArray[12]);
+
+        // arrival
+        LocalTime arrival = convertOffset(tokenArray[13]) ;
+
+
+        // bookingClass
+        String bookingClass = tokenArray[14];
+
+        //  seat
+        String seat = tokenArray[15];
+
+        //ticket erstellen
+        return new Ticket(uuid, bookingID, flight, from, to, departure, arrival, bookingClass, seat);
+
     }
 
 
@@ -84,5 +138,15 @@ public class CSVReader {
             System.out.println("ungültiges Geburtsdatum");
 
         }
+    }
+
+    private LocalTime convertOffset(String arrivalString){
+        String[] partArrival = arrivalString.split("\\+");
+        String arrivalTime = partArrival[0];
+        int arrivalOffset = Integer.parseInt(partArrival[1]);
+        LocalTime arrival = LocalTime.parse(arrivalTime);
+        arrival = arrival.plusHours(arrivalOffset);
+        return arrival;
+
     }
 }
