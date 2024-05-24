@@ -4,7 +4,9 @@ public class BaggageLager {
     public BaggageLager(){
         Baggage[][][] baggageArray = new Baggage[10][10][5];
         RobotArm robotArm = new RobotArm();
+
     }
+
 
 }
 
