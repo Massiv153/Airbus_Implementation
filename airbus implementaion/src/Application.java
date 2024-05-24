@@ -3,7 +3,5 @@ public class Application {
         Airport airport = new Airport();
 
 
-
-
     }
 }
