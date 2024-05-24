@@ -13,8 +13,11 @@ public class Human {
     private HumanHand righthand;
     private HumanLeg leftLeg;
     private HumanLeg rightLeg;
+    private HumanIris humanIris;
+    private HumanFingerprint humanFingerprint;
 
-    public Human(String firstName, String lastName, String gender, LocalDate dateOfBirth) {
+
+    public Human(String firstName, String lastName, String gender, LocalDate dateOfBirth, String humanIris, String humanFingerprint) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;
@@ -27,6 +30,8 @@ public class Human {
         this.righthand = new HumanHand("right");
         this.leftLeg = new HumanLeg("left");
         this.rightLeg = new HumanLeg("right");
+        this.humanIris = new HumanIris(humanIris);
+        this.humanFingerprint = new HumanFingerprint(humanFingerprint);
     }
     //Getter
     public String getFirstName() {
@@ -75,6 +80,10 @@ public class Human {
 
     public HumanLeg getRightLeg() {
         return rightLeg;
+    }
+
+    public HumanIris getHumanIris() {
+        return humanIris;
     }
 
 

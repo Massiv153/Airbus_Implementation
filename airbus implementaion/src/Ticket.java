@@ -1,6 +1,8 @@
 import java.time.LocalTime;
 
 public class Ticket {
+
+
     private String uuid;
     private String bookingID;
     private String flight;
@@ -22,5 +24,9 @@ public class Ticket {
         this.arrival = arrival;
         this.bookingClass = bookingClass;
         this.seat = seat;
+    }
+
+    public String getUuid() {
+        return uuid;
     }
 }
