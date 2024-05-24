@@ -3,16 +3,18 @@ public class Baggage {
     private Priority priority;
 
 
-
-
     public Baggage(double baggageWeight, Priority priority){
         this.baggageWeight = baggageWeight;
         this.priority = priority;
 
 
     }
-    public double getBaggageWeight(Baggage baggage) {
+    public double getBaggageWeight() {
         return baggageWeight;
     }
+    public Priority getPriority() {
+        return priority;
+    }
+
 }
 

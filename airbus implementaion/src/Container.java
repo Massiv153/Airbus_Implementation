@@ -32,4 +32,18 @@ public class Container {
         return containerBaggage;
     }
 
+    public double getContainerWeight(){
+        return calcContainerWeight();
+
+    }
+
+    private double calcContainerWeight(){
+        double sum = 0;
+        for (Baggage baggage : containerBaggage){
+            sum += baggage.getBaggageWeight();
+        }
+        return sum;
+
+    }
+
 }

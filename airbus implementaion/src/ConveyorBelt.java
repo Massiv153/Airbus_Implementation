@@ -3,12 +3,19 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConveyorBelt {
     private CheckInDesk checkInDesk;
+    private Baggage baggage;
 
     public void processBaggage(Baggage baggage, Printer printer, AtomicInteger sequenceID) {
-        baggage.getBaggageWeight(baggage);
+        baggage.getBaggageWeight();
         BaggageTag tag = new BaggageTag(sequenceID.incrementAndGet());
         printer.
     }
 
-    public void get
+    public Baggage getBaggage(){
+        return baggage;
+    }
+    public void removeBaggage(){
+        baggage = null;
+    }
+
 }

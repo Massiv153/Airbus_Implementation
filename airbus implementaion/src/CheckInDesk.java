@@ -8,15 +8,18 @@ public class CheckInDesk {
     private Wartebereich wartebereich;
     private Reader[] reader;
     private FederalPoliceOfficer federalPoliceOfficer;
+    private Container[] containers;
 
-    public CheckInDesk() {
+    public CheckInDesk(Container[] containers) {
+        this.containers = containers;
         Warteschlange warteschlange = new Warteschlange();
         Printer printer = new Printer();
         ConveyorBelt conveyorBelt = new ConveyorBelt();
-        BaggageLager lager = new BaggageLager();
+        BaggageLager baggageLager = new BaggageLager();
         Wartebereich wartebereich = new Wartebereich();
         Reader[] reader = new Reader[3];
         FederalPoliceOfficer federalPoliceOfficer = new FederalPoliceOfficer();
+        RobotArm robotArm = new RobotArm(conveyorBelt, baggageLager, containers );
     }
 
 
