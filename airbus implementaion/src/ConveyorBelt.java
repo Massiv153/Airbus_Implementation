@@ -5,9 +5,11 @@ public class ConveyorBelt {
     private CheckInDesk checkInDesk;
 
     public void processBaggage(Baggage baggage, Printer printer, AtomicInteger sequenceID) {
-        baggage.setBaggageWeight(new Random().nextDouble() * 30);
+        baggage.getBaggageWeight(baggage);
         BaggageTag tag = new BaggageTag(sequenceID.incrementAndGet());
         printer.printBaggageTag(tag);
 
     }
+
+    public void get
 }
