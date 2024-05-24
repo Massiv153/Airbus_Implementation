@@ -7,6 +7,7 @@ public class CheckInDesk {
     private BaggageLager lager;
     private Wartebereich wartebereich;
     private Reader[] reader;
+    private FederalPoliceOfficer federalPoliceOfficer;
 
     public CheckInDesk() {
         Warteschlange warteschlange = new Warteschlange();
@@ -15,5 +16,8 @@ public class CheckInDesk {
         BaggageLager lager = new BaggageLager();
         Wartebereich wartebereich = new Wartebereich();
         Reader[] reader = new Reader[3];
+        FederalPoliceOfficer federalPoliceOfficer = new FederalPoliceOfficer();
     }
+
+
 }
