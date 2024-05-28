@@ -8,6 +8,7 @@ public class CheckInDesk {
     private Wartebereich wartebereich;
     private Reader[] reader;
     private FederalPoliceOfficer federalPoliceOfficer;
+    private FederalPolice federalPolice;
     private Container[] containers;
     private final RobotArm robotArm;
 
