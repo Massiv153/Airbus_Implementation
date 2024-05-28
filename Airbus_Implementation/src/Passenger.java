@@ -1,3 +1,4 @@
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,8 @@ public class Passenger extends Human{
     private Reader reader;
     private Warrent hasWarrant;
     private BoardingPass boardingPass;
+    private Wartebereich seatWartebereich;
+
 
 
     public Passenger(String firstname, String lastname, String gender, LocalDate dateofbirth, String passportID,
@@ -21,6 +24,7 @@ public class Passenger extends Human{
         this.baggages = baggages;
         this.hasWarrant = warrent;
         this.baggages = new ArrayList<>();
+
 
     }
 
@@ -67,4 +71,14 @@ public class Passenger extends Human{
     public BoardingPass getBoardingPass() {
         return boardingPass;
     }
+
+    public Ticket getTicket() {
+        return ticket;
+    }
+
+    public void setSeatWartebereich(Wartebereich seatWartebereich) {
+        this.seatWartebereich = seatWartebereich;
+    }
+
+
 }

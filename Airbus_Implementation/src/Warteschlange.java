@@ -9,16 +9,15 @@ public class Warteschlange {
         this.queue = new LinkedList<>();
     }
 
-    public boolean addToQueue(Passenger passenger) {
-        if (queue.size() < 30) {
-            queue.offer(passenger);
-            return true;
-        } else {
-            return false;
-        }
+    public void addToQueue(Passenger passenger) {
+        queue.add(passenger);
     }
 
-    public Passenger removerFromQueue() {
+    public Passenger removeFromQueue() {
         return queue.poll();
+    }
+
+    public Passenger getFirst(){
+        return queue.peek();
     }
 }

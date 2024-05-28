@@ -1,4 +1,5 @@
 import java.time.LocalTime;
+import java.util.List;
 
 public class Ticket {
 
@@ -12,6 +13,7 @@ public class Ticket {
     private final LocalTime arrival;
     private final BookingClass bookingClass;
     private final String seat;
+    private List<Integer> sequenceIDList;
 
     public Ticket(String uuid, String bookingID, String flight, String from, String to,
                   LocalTime departure, LocalTime arrival, BookingClass bookingClass, String seat){
@@ -29,5 +31,9 @@ public class Ticket {
 
     public String getUuid() {
         return uuid;
+    }
+
+    public void setSequenceIDList(List<Integer> sequenceIDList) {
+        this.sequenceIDList = sequenceIDList;
     }
 }

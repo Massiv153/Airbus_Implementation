@@ -5,7 +5,6 @@ public class Container{
     private final int laenge = 3;
     private final int hoehe = 3;
     private final int maxCapacity = breite*laenge*hoehe;
-    private int remainingCapacity;
     private  int top;
     private final Baggage[] containerBaggage;
 
@@ -39,10 +38,6 @@ public class Container{
         Baggage removedBaggage = containerBaggage[top];
         containerBaggage[top--] = null;
         return  removedBaggage;
-    }
-
-    public Baggage[] getContainerBaggage() {
-        return containerBaggage;
     }
 
     public double getContainerWeight(){

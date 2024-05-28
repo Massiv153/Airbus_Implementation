@@ -3,6 +3,7 @@ public class BaggageTag {
 
     public BaggageTag(int sequenceID) {
         this.sequenceID = sequenceID;
+
     }
 
     public int getSequenceID() {
