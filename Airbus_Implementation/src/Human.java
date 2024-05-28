@@ -7,9 +7,6 @@ public class Human {
     private final LocalDate dateOfBirth;
     private final HumanHead head;
     private final HumanBody body;
-    private final HumanArm[] humanArms;
-    private final HumanHand[] humanHands;
-    private final HumanLeg[] humanLegs;
     private final HumanIris humanIris;
     private final HumanFingerprint humanFingerprint;
 
@@ -19,11 +16,14 @@ public class Human {
         this.lastName = lastName;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
-        humanArms = new HumanArm[2];
-        humanHands = new HumanHand[2];
-        humanLegs = new HumanLeg[2];
         this.head = new HumanHead();
         this.body = new HumanBody();
+        HumanArm leftArm = new HumanArm("left");
+        HumanArm rightArm = new HumanArm("right");
+        HumanHand leftHand = new HumanHand("left");
+        HumanHand rightHand = new HumanHand("right");
+        HumanLeg leftLeg = new HumanLeg("left");
+        HumanLeg rightLeg = new HumanLeg("right");
         this.humanIris = new HumanIris(humanIris);
         this.humanFingerprint = new HumanFingerprint(humanFingerprint);
     }
@@ -56,5 +56,7 @@ public class Human {
         return humanIris;
     }
 
-
+    public HumanFingerprint getHumanFingerprint() {
+        return humanFingerprint;
+    }
 }

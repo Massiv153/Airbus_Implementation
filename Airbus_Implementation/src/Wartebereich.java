@@ -1,5 +1,12 @@
 public class Wartebereich {
-    private CheckInDesk checkInDesk;
+    private boolean isTaken;
 
-    Wartebereich[][] wartebereichArray = new Wartebereich[20][30];
+    public boolean isTaken(){
+        return isTaken;
+    }
+
+    public void setTaken(boolean isTaken){
+        this.isTaken = isTaken;
+    }
+
 }

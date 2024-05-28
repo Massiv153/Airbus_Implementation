@@ -6,7 +6,7 @@ public class BaggageLager {
     private CheckInDesk checkInDesk;
     private Baggage baggage;
     private final List<Container> fullContainers;
-    
+
     public BaggageLager(){
         lager = new Baggage[10][10][5];
         fullContainers = new ArrayList<Container>();
@@ -74,7 +74,7 @@ public class BaggageLager {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 for (int k = 0; k < 5; k++) {
-                    Baggage baggage = lager[j][k][i];
+                    Baggage baggage = lager[i][j][k];
                     if (baggage != null) {
                         int priority = assignPriority(baggage);
                         count[priority - 1]++;

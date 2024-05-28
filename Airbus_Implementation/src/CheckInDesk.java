@@ -16,35 +16,35 @@ public class CheckInDesk {
 
     public CheckInDesk(ContainerLagerLeer containerLagerLeer, BaggageLager baggageLager) {
         this.conveyorBelt = new ConveyorBelt();
-
         this.robotArm = new RobotArm(conveyorBelt, baggageLager, containerLagerLeer);
-        Warteschlange warteschlange = new Warteschlange();
-        Printer printer = new Printer();
+        this.warteschlange = new Warteschlange();
+        this.printer = new Printer();
+        this.reader = new Reader[3];
+        this.federalPoliceOfficer = new FederalPoliceOfficer();
 
-
-        Wartebereich wartebereich = new Wartebereich();
-        Reader[] reader = new Reader[3];
-        FederalPoliceOfficer federalPoliceOfficer = new FederalPoliceOfficer();
 
     }
 
 
-    public void processPassenger(Passenger passenger, FederalPoliceOfficer officer, AtomicInteger sequenceID) {
+    public void processPassenger(Passenger passenger, FederalPoliceOfficer officer) {
         if (passenger.authenticateRandomly()) {
             switch (passenger.hasWarrant()){
                 case Warrent.YES:
                     officer.arrestedPassengers(passenger);
                 case Warrent.NO:
                     for (Baggage baggage : passenger.getBaggageList()) {
-                        conveyorBelt.processBaggage(baggage, printer, sequenceID, robotArm);
+                        conveyorBelt.processBaggage(baggage, printer, robotArm);
+
                     }
                     printer.printBoardingPass(passenger);
             }
         }
+
     }
 
-    public RobotArm getRobotArm() {
-        return robotArm;
+    public Warteschlange getWarteschlange() {
+        return warteschlange;
     }
+
 
 }

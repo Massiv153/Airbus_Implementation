@@ -28,8 +28,8 @@ public class ContainerLagerLeer {
     }
 
     public Container getContainer() {
-        for (int row = 2; row >= 0; row--) {
-            for (int col = 2; col >= 0; col--) {
+        for (int row = 1; row >= 0; row--) {
+            for (int col = 1; col >= 0; col--) {
                 if (containerStorage[row][col] != null) {
                     return containerStorage[row][col];
                 }
@@ -38,10 +38,11 @@ public class ContainerLagerLeer {
         return null;
     }
     public void removeContainer(){
-        for (int row = 2; row >= 0; row--) {
-            for (int col = 2; col >= 0; col--) {
+        for (int row = 1; row >= 0; row--) {
+            for (int col = 1; col >= 0; col--) {
                 if (containerStorage[row][col] != null) {
                     containerStorage[row][col] = null;
+                    return;
                 }
             }
         }
