@@ -1,0 +1,1708 @@
+Index: src/Tank.java
+===================================================================
+diff --git a/src/Tank.java b/src/Tank.java
+deleted file mode 100644
+--- a/src/Tank.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,21 +0,0 @@
+-public class Tank {
+-    private int capacity;
+-    private int fuel;
+-
+-    public Tank(int length, int width, int height){
+-        this.capacity = length*width*height;
+-        this.fuel = this.capacity;
+-    }
+-
+-    public int getFuel() {
+-        return fuel;
+-    }
+-
+-    public void setFuel(int fuel) {
+-        this.fuel = fuel;
+-    }
+-
+-    public int getCapacity() {
+-        return capacity;
+-    }
+-}
+Index: .idea/uiDesigner.xml
+===================================================================
+diff --git a/.idea/uiDesigner.xml b/.idea/uiDesigner.xml
+deleted file mode 100644
+--- a/.idea/uiDesigner.xml	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,124 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Palette2">
+-    <group name="Swing">
+-      <item class="com.intellij.uiDesigner.HSpacer" tooltip-text="Horizontal Spacer" icon="/com/intellij/uiDesigner/icons/hspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="1" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="com.intellij.uiDesigner.VSpacer" tooltip-text="Vertical Spacer" icon="/com/intellij/uiDesigner/icons/vspacer.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="1" anchor="0" fill="2" />
+-      </item>
+-      <item class="javax.swing.JPanel" icon="/com/intellij/uiDesigner/icons/panel.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JScrollPane" icon="/com/intellij/uiDesigner/icons/scrollPane.svg" removable="false" auto-create-binding="false" can-attach-label="true">
+-        <default-constraints vsize-policy="7" hsize-policy="7" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JButton" icon="/com/intellij/uiDesigner/icons/button.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="0" fill="1" />
+-        <initial-values>
+-          <property name="text" value="Button" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JRadioButton" icon="/com/intellij/uiDesigner/icons/radioButton.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="RadioButton" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JCheckBox" icon="/com/intellij/uiDesigner/icons/checkBox.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="3" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="CheckBox" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JLabel" icon="/com/intellij/uiDesigner/icons/label.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="8" fill="0" />
+-        <initial-values>
+-          <property name="text" value="Label" />
+-        </initial-values>
+-      </item>
+-      <item class="javax.swing.JTextField" icon="/com/intellij/uiDesigner/icons/textField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JPasswordField" icon="/com/intellij/uiDesigner/icons/passwordField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JFormattedTextField" icon="/com/intellij/uiDesigner/icons/formattedTextField.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1">
+-          <preferred-size width="150" height="-1" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextArea" icon="/com/intellij/uiDesigner/icons/textArea.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTextPane" icon="/com/intellij/uiDesigner/icons/textPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JEditorPane" icon="/com/intellij/uiDesigner/icons/editorPane.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JComboBox" icon="/com/intellij/uiDesigner/icons/comboBox.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="2" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JTable" icon="/com/intellij/uiDesigner/icons/table.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JList" icon="/com/intellij/uiDesigner/icons/list.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="2" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTree" icon="/com/intellij/uiDesigner/icons/tree.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3">
+-          <preferred-size width="150" height="50" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JTabbedPane" icon="/com/intellij/uiDesigner/icons/tabbedPane.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSplitPane" icon="/com/intellij/uiDesigner/icons/splitPane.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="3" hsize-policy="3" anchor="0" fill="3">
+-          <preferred-size width="200" height="200" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JSpinner" icon="/com/intellij/uiDesigner/icons/spinner.svg" removable="false" auto-create-binding="true" can-attach-label="true">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSlider" icon="/com/intellij/uiDesigner/icons/slider.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="8" fill="1" />
+-      </item>
+-      <item class="javax.swing.JSeparator" icon="/com/intellij/uiDesigner/icons/separator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="6" anchor="0" fill="3" />
+-      </item>
+-      <item class="javax.swing.JProgressBar" icon="/com/intellij/uiDesigner/icons/progressbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JToolBar" icon="/com/intellij/uiDesigner/icons/toolbar.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="6" anchor="0" fill="1">
+-          <preferred-size width="-1" height="20" />
+-        </default-constraints>
+-      </item>
+-      <item class="javax.swing.JToolBar$Separator" icon="/com/intellij/uiDesigner/icons/toolbarSeparator.svg" removable="false" auto-create-binding="false" can-attach-label="false">
+-        <default-constraints vsize-policy="0" hsize-policy="0" anchor="0" fill="1" />
+-      </item>
+-      <item class="javax.swing.JScrollBar" icon="/com/intellij/uiDesigner/icons/scrollbar.svg" removable="false" auto-create-binding="true" can-attach-label="false">
+-        <default-constraints vsize-policy="6" hsize-policy="0" anchor="0" fill="2" />
+-      </item>
+-    </group>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: airbus implementaion.iml
+===================================================================
+diff --git a/airbus implementaion.iml b/airbus implementaion.iml
+deleted file mode 100644
+--- a/airbus implementaion.iml	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,11 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="JAVA_MODULE" version="4">
+-  <component name="NewModuleRootManager" inherit-compiler-output="true">
+-    <exclude-output />
+-    <content url="file://$MODULE_DIR$">
+-      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: src/JetEngine.java
+===================================================================
+diff --git a/src/JetEngine.java b/src/JetEngine.java
+deleted file mode 100644
+--- a/src/JetEngine.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,42 +0,0 @@
+-public class JetEngine {
+-    private Fan fan;
+-    private LowPressureCompressor lowPressureCompressor;
+-    private HighPressureCompressor highPressureCompressor;
+-    private HighPressureTurbine highPressureTurbine;
+-    private CombustionChamber combustionChamber;
+-
+-    private boolean isActive;
+-    private int speed;
+-
+-    public JetEngine(Fan fan, LowPressureCompressor lowPressureCompressor, HighPressureCompressor highPressureCompressor,
+-                     HighPressureTurbine highPressureTurbine, CombustionChamber combustionChamber){
+-        this.fan = fan;
+-        this.lowPressureCompressor = lowPressureCompressor;
+-        this.highPressureCompressor = highPressureCompressor;
+-        this.highPressureTurbine = highPressureTurbine;
+-        this.combustionChamber = combustionChamber;
+-
+-        this.isActive = false;
+-        this.speed = 0;
+-    }
+-
+-    public boolean isActive() {
+-        return isActive;
+-    }
+-
+-    public CombustionChamber getCombustionChamber() {
+-        return combustionChamber;
+-    }
+-
+-    public void setActive(boolean active) {
+-        isActive = active;
+-    }
+-
+-    public int getSpeed() {
+-        return speed;
+-    }
+-
+-    public void setSpeed(int speed) {
+-        this.speed = speed;
+-    }
+-}
+Index: src/CabinType.java
+===================================================================
+diff --git a/src/CabinType.java b/src/CabinType.java
+deleted file mode 100644
+--- a/src/CabinType.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,3 +0,0 @@
+-public enum CabinType {
+-    BUSINESS_CLASS, PREMIUM_ECONOMY, ECONOMY
+-}
+Index: src/CombustionChamber.java
+===================================================================
+diff --git a/src/CombustionChamber.java b/src/CombustionChamber.java
+deleted file mode 100644
+--- a/src/CombustionChamber.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,2 +0,0 @@
+-public class CombustionChamber {
+-}
+Index: src/HighPressureCompressor.java
+===================================================================
+diff --git a/src/HighPressureCompressor.java b/src/HighPressureCompressor.java
+deleted file mode 100644
+--- a/src/HighPressureCompressor.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,13 +0,0 @@
+-public class HighPressureCompressor {
+-    private Unit[] units;
+-
+-    public HighPressureCompressor(){
+-        this.units = new Unit[6];
+-        this.units[0] = new Unit(36, BladeSize.S);
+-        this.units[1] = new Unit(36, BladeSize.S);
+-        this.units[2] = new Unit(32, BladeSize.S);
+-        this.units[3] = new Unit(32, BladeSize.S);
+-        this.units[4] = new Unit(30, BladeSize.S);
+-        this.units[5] = new Unit(30, BladeSize.S);
+-    }
+-}
+Index: src/ConveyorBelt.java
+===================================================================
+diff --git a/src/ConveyorBelt.java b/src/ConveyorBelt.java
+deleted file mode 100644
+--- a/src/ConveyorBelt.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,14 +0,0 @@
+-import java.util.Random;
+-import java.util.concurrent.atomic.AtomicInteger;
+-
+-public class ConveyorBelt {
+-    private CheckInDesk checkInDesk;
+-
+-    public void processBaggage(Baggage baggage, Printer printer, AtomicInteger sequenceID) {
+-        baggage.getBaggageWeight(baggage);
+-        BaggageTag tag = new BaggageTag(sequenceID.incrementAndGet());
+-        printer.
+-    }
+-
+-    public void get
+-}
+Index: src/BladeSize.java
+===================================================================
+diff --git a/src/BladeSize.java b/src/BladeSize.java
+deleted file mode 100644
+--- a/src/BladeSize.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,3 +0,0 @@
+-public enum BladeSize {
+-    S, M, L
+-}
+Index: src/HumanIris.java
+===================================================================
+diff --git a/src/HumanIris.java b/src/HumanIris.java
+deleted file mode 100644
+--- a/src/HumanIris.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,11 +0,0 @@
+-public class HumanIris {
+-
+-
+-    private String humanIris;
+-    public HumanIris(String humanIris){
+-        this.humanIris = humanIris;
+-    }
+-    public String getHumanIris() {
+-        return humanIris;
+-    }
+-}
+Index: src/Configuration.java
+===================================================================
+diff --git a/src/Configuration.java b/src/Configuration.java
+deleted file mode 100644
+--- a/src/Configuration.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,11 +0,0 @@
+-import java.nio.file.FileSystems;
+-
+-public enum Configuration {
+-    INSTANCE;
+-
+-    public final String fileSeparator = FileSystems.getDefault().getSeparator();
+-    public final String userDirectory = System.getProperty("user.dir");
+-    public final String dataFile = userDirectory + fileSeparator + "data" + fileSeparator + "data.csv";
+-    public final String csvDelimiter = ",";
+-    public final double milesInKilometer = 1.609344;
+-}
+Index: .idea/misc.xml
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_21_PREVIEW" project-jdk-name="21" project-jdk-type="JavaSDK">
+-    <output url="file://$PROJECT_DIR$/build" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/Cabin.java
+===================================================================
+diff --git a/src/Cabin.java b/src/Cabin.java
+deleted file mode 100644
+--- a/src/Cabin.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,34 +0,0 @@
+-public class Cabin {
+-    private CabinType cabinType;
+-    private int startRow;
+-    private int endRow;
+-    private char[] seats;
+-    private int seatsOverall;
+-
+-    public Cabin(CabinType cabinType, int startRow, int endRow, char[] seats, int seatsOverall){
+-        this.cabinType = cabinType;
+-        this.startRow = startRow;
+-        this.endRow = endRow;
+-        this.seats = seats;
+-        this.seatsOverall = seatsOverall;
+-    }
+-
+-    public String toString(){
+-        return this.cabinType+" "+this.createString()+" "+this.seats.toString()+" : "+this.seatsOverall;
+-    }
+-
+-    public int getSeatsOverall() {
+-        return seatsOverall;
+-    }
+-
+-    private String createString(){
+-        String s = "";
+-        for (int i = startRow; i <= endRow; i++) {
+-            s = s+i+",";
+-            if(i == i){
+-                s=s+i;
+-            }
+-        }
+-        return s;
+-    }
+-}
+Index: src/Human.java
+===================================================================
+diff --git a/src/Human.java b/src/Human.java
+deleted file mode 100644
+--- a/src/Human.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,90 +0,0 @@
+-import java.time.LocalDate;
+-
+-public class Human {
+-    private String firstName;
+-    private String lastName;
+-    private String gender;
+-    private LocalDate dateOfBirth;
+-    private HumanHead head;
+-    private HumanBody body;
+-    private HumanArm leftarm;
+-    private HumanArm rightarm;
+-    private HumanHand lefthand;
+-    private HumanHand righthand;
+-    private HumanLeg leftLeg;
+-    private HumanLeg rightLeg;
+-    private HumanIris humanIris;
+-    private HumanFingerprint humanFingerprint;
+-
+-
+-    public Human(String firstName, String lastName, String gender, LocalDate dateOfBirth, String humanIris, String humanFingerprint) {
+-        this.firstName = firstName;
+-        this.lastName = lastName;
+-        this.gender = gender;
+-        this.dateOfBirth = dateOfBirth;
+-        this.head = new HumanHead();
+-        this.body = new HumanBody();
+-        this.leftarm = new HumanArm("left");
+-        this.rightarm = new HumanArm("right");
+-        this.lefthand = new HumanHand("left");
+-        this.righthand = new HumanHand("right");
+-        this.leftLeg = new HumanLeg("left");
+-        this.rightLeg = new HumanLeg("right");
+-        this.humanIris = new HumanIris(humanIris);
+-        this.humanFingerprint = new HumanFingerprint(humanFingerprint);
+-    }
+-    //Getter
+-    public String getFirstName() {
+-        return firstName;
+-    }
+-
+-    public String getLastName() {
+-        return lastName;
+-    }
+-
+-    public String getGender() {
+-        return gender;
+-    }
+-
+-    public LocalDate getDateOfBirth() {
+-        return dateOfBirth;
+-    }
+-
+-    public HumanHead getHead() {
+-        return head;
+-    }
+-
+-    public HumanBody getBody() {
+-        return body;
+-    }
+-
+-    public HumanArm getLeftarm() {
+-        return leftarm;
+-    }
+-
+-    public HumanArm getRightarm() {
+-        return rightarm;
+-    }
+-
+-    public HumanHand getLefthand() {
+-        return lefthand;
+-    }
+-
+-    public HumanHand getRighthand() {
+-        return righthand;
+-    }
+-
+-    public HumanLeg getLeftLeg() {
+-        return leftLeg;
+-    }
+-
+-    public HumanLeg getRightLeg() {
+-        return rightLeg;
+-    }
+-
+-    public HumanIris getHumanIris() {
+-        return humanIris;
+-    }
+-
+-
+-}
+Index: src/BookingClass.java
+===================================================================
+diff --git a/src/BookingClass.java b/src/BookingClass.java
+deleted file mode 100644
+--- a/src/BookingClass.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,3 +0,0 @@
+-public enum BookingClass {
+-    ECONOMY, PREMIUM_ECONOMY, BUSINESS
+-}
+Index: .gitignore
+===================================================================
+diff --git a/.gitignore b/.gitignore
+deleted file mode 100644
+--- a/.gitignore	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,29 +0,0 @@
+-### IntelliJ IDEA ###
+-out/
+-!**/src/main/**/out/
+-!**/src/test/**/out/
+-
+-### Eclipse ###
+-.apt_generated
+-.classpath
+-.factorypath
+-.project
+-.settings
+-.springBeans
+-.sts4-cache
+-bin/
+-!**/src/main/**/bin/
+-!**/src/test/**/bin/
+-
+-### NetBeans ###
+-/nbproject/private/
+-/nbbuild/
+-/dist/
+-/nbdist/
+-/.nb-gradle/
+-
+-### VS Code ###
+-.vscode/
+-
+-### Mac OS ###
+-.DS_Store
+\ No newline at end of file
+Index: src/Passenger.java
+===================================================================
+diff --git a/src/Passenger.java b/src/Passenger.java
+deleted file mode 100644
+--- a/src/Passenger.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,59 +0,0 @@
+-import java.time.LocalDate;
+-import java.util.ArrayList;
+-import java.util.List;
+-import java.util.Random;
+-import java.util.concurrent.atomic.AtomicInteger;
+-
+-public class Passenger extends Human{
+-    private List<Baggage> baggages;
+-    private String passportID;
+-    private Ticket ticket;
+-    private Reader reader;
+-    private boolean hasWarrant;
+-
+-
+-    public Passenger(String firstname, String lastname, String gender, LocalDate dateofbirth, String passportID,List<Baggage> baggages, String humanIris, String humanFingerprint, Warrent warrent){
+-        super(firstname, lastname, gender, dateofbirth, humanIris, humanFingerprint);
+-        this.passportID = passportID;
+-        this.baggages = baggages;
+-        this.hasWarrant = hasWarrant;
+-        this.baggages = new ArrayList<>();
+-
+-    }
+-
+-    public void setTicket(Ticket ticket) {
+-        this.ticket = ticket;
+-    }
+-
+-    public String getName() {
+-        return getFirstName();
+-    }
+-
+-    public boolean authenticateRandomly() {
+-        Random random = new Random();
+-        int authType = random.nextInt(3);
+-
+-        switch (authType) {
+-            case 0:
+-                return reader.scanPassport();
+-            case 1:
+-                return reader.scanIris();
+-            case 2:
+-                return reader.scanFingerprint();
+-            default:
+-                return false;
+-        }
+-    }
+-
+-    public boolean hasWarrant() {
+-        return hasWarrant;
+-    }
+-
+-    public List<Baggage> getBaggageList() {
+-        return baggages;
+-    }
+-
+-    public void addBaggage(Baggage baggage) {
+-        baggages.add(baggage);
+-    }
+-}
+Index: src/HumanHand.java
+===================================================================
+diff --git a/src/HumanHand.java b/src/HumanHand.java
+deleted file mode 100644
+--- a/src/HumanHand.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,5 +0,0 @@
+-public class HumanHand extends BodyPart{
+-    public HumanHand(String side){
+-        super("Hand", side);
+-    }
+-}
+Index: src/BaggageLager.java
+===================================================================
+diff --git a/src/BaggageLager.java b/src/BaggageLager.java
+deleted file mode 100644
+--- a/src/BaggageLager.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,12 +0,0 @@
+-public class BaggageLager {
+-    private CheckInDesk checkInDesk;
+-
+-    public BaggageLager(){
+-        Baggage[][][] baggageArray = new Baggage[10][10][5];
+-        RobotArm robotArm = new RobotArm();
+-
+-    }
+-
+-
+-}
+-
+Index: src/HumanHead.java
+===================================================================
+diff --git a/src/HumanHead.java b/src/HumanHead.java
+deleted file mode 100644
+--- a/src/HumanHead.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,5 +0,0 @@
+-public class HumanHead extends BodyPart{
+-    public HumanHead(){
+-        super("Kopf",null);
+-    }
+-}
+Index: src/HighPressureTurbine.java
+===================================================================
+diff --git a/src/HighPressureTurbine.java b/src/HighPressureTurbine.java
+deleted file mode 100644
+--- a/src/HighPressureTurbine.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,9 +0,0 @@
+-public class HighPressureTurbine {
+-    private Unit frontUnit;
+-    private Unit backUnit;
+-
+-    public HighPressureTurbine(){
+-        this.frontUnit = new Unit(36, BladeSize.M);
+-        this.backUnit = new Unit(36, BladeSize.M);
+-    }
+-}
+Index: src/Unit.java
+===================================================================
+diff --git a/src/Unit.java b/src/Unit.java
+deleted file mode 100644
+--- a/src/Unit.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,10 +0,0 @@
+-public class Unit {
+-    private Blade[] blade;
+-
+-    public Unit(int bladeCount, BladeSize bladeSize){
+-        blade = new Blade[bladeCount];
+-        for (int i = 0; i < bladeCount; i++) {
+-            blade[i] = new Blade(bladeSize);
+-        }
+-    }
+-}
+Index: src/Wing.java
+===================================================================
+diff --git a/src/Wing.java b/src/Wing.java
+deleted file mode 100644
+--- a/src/Wing.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,7 +0,0 @@
+-public class Wing {
+-    private JetEngine jetEngine;
+-
+-    public Wing(JetEngine jetEngine){
+-        this.jetEngine = jetEngine;
+-    }
+-}
+Index: src/Ticket.java
+===================================================================
+diff --git a/src/Ticket.java b/src/Ticket.java
+deleted file mode 100644
+--- a/src/Ticket.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,32 +0,0 @@
+-import java.time.LocalTime;
+-
+-public class Ticket {
+-
+-
+-    private String uuid;
+-    private String bookingID;
+-    private String flight;
+-    private String from;
+-    private String to;
+-    private LocalTime departure;
+-    private LocalTime arrival;
+-    private String bookingClass;
+-    private String seat;
+-
+-    public Ticket(String uuid, String bookingID, String flight, String from, String to,
+-                  LocalTime departure, LocalTime arrival, String bookingClass, String seat){
+-        this.uuid = uuid;
+-        this.bookingID = bookingID;
+-        this.flight = flight;
+-        this.from = from;
+-        this.to = to;
+-        this.departure = departure;
+-        this.arrival = arrival;
+-        this.bookingClass = bookingClass;
+-        this.seat = seat;
+-    }
+-
+-    public String getUuid() {
+-        return uuid;
+-    }
+-}
+Index: src/Lager.java
+===================================================================
+diff --git a/src/Lager.java b/src/Lager.java
+deleted file mode 100644
+--- a/src/Lager.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,6 +0,0 @@
+-public class Lager {
+-    private CheckInDesk checkInDesk;
+-
+-    Baggage[][][] baggageArray = new Baggage[10][10][5];
+-}
+-
+Index: src/Wartebereich.java
+===================================================================
+diff --git a/src/Wartebereich.java b/src/Wartebereich.java
+deleted file mode 100644
+--- a/src/Wartebereich.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,5 +0,0 @@
+-public class Wartebereich {
+-    private CheckInDesk checkInDesk;
+-
+-    Wartebereich[][] wartebereichArray = new Wartebereich[20][30];
+-}
+Index: src/Baggage.java
+===================================================================
+diff --git a/src/Baggage.java b/src/Baggage.java
+deleted file mode 100644
+--- a/src/Baggage.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,18 +0,0 @@
+-public class Baggage {
+-    private final double baggageWeight;
+-    private Priority priority;
+-
+-
+-
+-
+-    public Baggage(double baggageWeight, Priority priority){
+-        this.baggageWeight = baggageWeight;
+-        this.priority = priority;
+-
+-
+-    }
+-    public double getBaggageWeight(Baggage baggage) {
+-        return baggageWeight;
+-    }
+-}
+-
+Index: src/BaggageTag.java
+===================================================================
+diff --git a/src/BaggageTag.java b/src/BaggageTag.java
+deleted file mode 100644
+--- a/src/BaggageTag.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,17 +0,0 @@
+-public class BaggageTag {
+-    private int sequenceID;
+-
+-    public BaggageTag(int sequenceID) {
+-        this.sequenceID = sequenceID;
+-    }
+-
+-    public int getSequenceID() {
+-        return sequenceID;
+-    }
+-
+-    @Override
+-    public String toString() {
+-        return "BaggageTag{" + "sequenceID=" + sequenceID + '}';
+-    }
+-}
+-
+Index: src/HumanArm.java
+===================================================================
+diff --git a/src/HumanArm.java b/src/HumanArm.java
+deleted file mode 100644
+--- a/src/HumanArm.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,6 +0,0 @@
+-public class HumanArm extends BodyPart{
+-    public HumanArm(String side){
+-        super("Arm",side);
+-    }
+-
+-}
+Index: src/Reader.java
+===================================================================
+diff --git a/src/Reader.java b/src/Reader.java
+deleted file mode 100644
+--- a/src/Reader.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,17 +0,0 @@
+-import java.util.Random;
+-
+-public class Reader {
+-    private CheckInDesk checkInDesk;
+-
+-    public boolean scanPassport() {
+-        return new Random().nextBoolean();
+-    }
+-
+-    public boolean scanIris() {
+-        return new Random().nextBoolean();
+-    }
+-
+-    public boolean scanFingerprint() {
+-        return new Random().nextBoolean();
+-    }
+-}
+Index: src/LowPressureTurbine.java
+===================================================================
+diff --git a/src/LowPressureTurbine.java b/src/LowPressureTurbine.java
+deleted file mode 100644
+--- a/src/LowPressureTurbine.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,9 +0,0 @@
+-public class LowPressureTurbine {
+-    private Unit frontUnit;
+-    private Unit backUnit;
+-
+-    public LowPressureTurbine(){
+-        this.frontUnit = new Unit(36, BladeSize.M);
+-        this.backUnit = new Unit(36, BladeSize.M);
+-    }
+-}
+Index: src/Warteschlange.java
+===================================================================
+diff --git a/src/Warteschlange.java b/src/Warteschlange.java
+deleted file mode 100644
+--- a/src/Warteschlange.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,24 +0,0 @@
+-import java.util.LinkedList;
+-import java.util.Queue;
+-
+-public class Warteschlange {
+-    private CheckInDesk checkInDesk;
+-    private final Queue<Passenger> queue;
+-
+-    public Warteschlange() {
+-        this.queue = new LinkedList<>();
+-    }
+-
+-    public boolean addToQueue(Passenger passenger) {
+-        if (queue.size() < 30) {
+-            queue.offer(passenger);
+-            return true;
+-        } else {
+-            return false;
+-        }
+-    }
+-
+-    public Passenger removerFromQueue() {
+-        return queue.poll();
+-    }
+-}
+Index: src/BodyPart.java
+===================================================================
+diff --git a/src/BodyPart.java b/src/BodyPart.java
+deleted file mode 100644
+--- a/src/BodyPart.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,21 +0,0 @@
+-public class BodyPart {
+-    private String name;
+-    private String side;
+-
+-
+-
+-    //Konstruktor Bodypart
+-        public BodyPart (String name, String side){
+-        this.name = name;
+-        this.side = side;
+-    }
+-
+-    //Getter
+-    public String getSide() {
+-        return side;
+-    }
+-
+-    public String getName() {
+-        return name;
+-    }
+-}
+Index: src/JetEngineMediator.java
+===================================================================
+diff --git a/src/JetEngineMediator.java b/src/JetEngineMediator.java
+deleted file mode 100644
+--- a/src/JetEngineMediator.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,24 +0,0 @@
+-public class JetEngineMediator implements IJetEngineMediator{
+-    private JetEngine leftEngine;
+-    private JetEngine rightEngine;
+-
+-    public JetEngineMediator(JetEngine leftEngine, JetEngine rightEngine){
+-        this.leftEngine = leftEngine;
+-        this.rightEngine = rightEngine;
+-    }
+-
+-    public void startup(){
+-        leftEngine.setActive(true);
+-        rightEngine.setActive(true);
+-    }
+-
+-    public void setSpeed(int mph){
+-        leftEngine.setSpeed((int) (mph*Configuration.INSTANCE.milesInKilometer));
+-        rightEngine.setSpeed((int) (mph*Configuration.INSTANCE.milesInKilometer));
+-    }
+-
+-    public void shutdown(){
+-        leftEngine.setActive(false);
+-        rightEngine.setActive(false);
+-    }
+-}
+Index: src/FederalPoliceOfficer.java
+===================================================================
+diff --git a/src/FederalPoliceOfficer.java b/src/FederalPoliceOfficer.java
+deleted file mode 100644
+--- a/src/FederalPoliceOfficer.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,27 +0,0 @@
+-import java.util.ArrayList;
+-import java.util.List;
+-
+-public class FederalPoliceOfficer {
+-    private List<Passenger> arrestedPassengers;
+-    private List<Baggage> confiscatedBaggage;
+-
+-    public FederalPoliceOfficer() {
+-        this.arrestedPassengers = new ArrayList<>();
+-        this.confiscatedBaggage = new ArrayList<>();
+-    }
+-
+-    public void arrestedPassengers(Passenger passenger) {
+-        System.out.println("Passenger " + passenger.getFirstName() + passenger.getLastName() + " arrested.");
+-        arrestedPassengers.add(passenger);
+-        confiscatedBaggage.addAll(passenger.getBaggageList());
+-        System.out.println("Baggage confiscated: " + passenger.getBaggageList());
+-    }
+-
+-    public List<Passenger> getArrestedPassengers() {
+-        return arrestedPassengers;
+-    }
+-
+-    public List<Baggage> getConfiscatedBaggage() {
+-        return confiscatedBaggage;
+-    }
+-}
+Index: src/CheckInDesk.java
+===================================================================
+diff --git a/src/CheckInDesk.java b/src/CheckInDesk.java
+deleted file mode 100644
+--- a/src/CheckInDesk.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,23 +0,0 @@
+-import java.util.Queue;
+-
+-public class CheckInDesk {
+-    private Warteschlange warteschlange;
+-    private Printer printer;
+-    private ConveyorBelt conveyorBelt;
+-    private BaggageLager lager;
+-    private Wartebereich wartebereich;
+-    private Reader[] reader;
+-    private FederalPoliceOfficer federalPoliceOfficer;
+-
+-    public CheckInDesk() {
+-        Warteschlange warteschlange = new Warteschlange();
+-        Printer printer = new Printer();
+-        ConveyorBelt conveyorBelt = new ConveyorBelt();
+-        BaggageLager lager = new BaggageLager();
+-        Wartebereich wartebereich = new Wartebereich();
+-        Reader[] reader = new Reader[3];
+-        FederalPoliceOfficer federalPoliceOfficer = new FederalPoliceOfficer();
+-    }
+-
+-
+-}
+Index: src/HumanBody.java
+===================================================================
+diff --git a/src/HumanBody.java b/src/HumanBody.java
+deleted file mode 100644
+--- a/src/HumanBody.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,5 +0,0 @@
+-public class HumanBody extends BodyPart{
+-    public HumanBody(){
+-        super("Body.java",null);
+-    }
+-}
+Index: src/AutonomousVehicle.java
+===================================================================
+diff --git a/src/AutonomousVehicle.java b/src/AutonomousVehicle.java
+deleted file mode 100644
+--- a/src/AutonomousVehicle.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,2 +0,0 @@
+-public class AutonomousVehicle {
+-}
+Index: src/Printer.java
+===================================================================
+diff --git a/src/Printer.java b/src/Printer.java
+deleted file mode 100644
+--- a/src/Printer.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,5 +0,0 @@
+-public class Printer {
+-    private CheckInDesk checkInDesk;
+-
+-
+-}
+Index: src/HumanLeg.java
+===================================================================
+diff --git a/src/HumanLeg.java b/src/HumanLeg.java
+deleted file mode 100644
+--- a/src/HumanLeg.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,5 +0,0 @@
+-public class HumanLeg extends BodyPart{
+-    public HumanLeg(String side) {
+-        super("Leg", side);
+-    }
+-}
+Index: src/Fan.java
+===================================================================
+diff --git a/src/Fan.java b/src/Fan.java
+deleted file mode 100644
+--- a/src/Fan.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,9 +0,0 @@
+-public class Fan {
+-    private Unit frontUnit;
+-    private Unit backUnit;
+-
+-    public Fan(){
+-        this.frontUnit = new Unit(48, BladeSize.L);
+-        this.backUnit = new Unit(45, BladeSize.L);
+-    }
+-}
+Index: src/IJetEngineMediator.java
+===================================================================
+diff --git a/src/IJetEngineMediator.java b/src/IJetEngineMediator.java
+deleted file mode 100644
+--- a/src/IJetEngineMediator.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,7 +0,0 @@
+-public interface IJetEngineMediator {
+-    void startup();
+-
+-    void setSpeed(int mph);
+-
+-    void shutdown();
+-}
+Index: src/Application.java
+===================================================================
+diff --git a/src/Application.java b/src/Application.java
+deleted file mode 100644
+--- a/src/Application.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,9 +0,0 @@
+-public class Application {
+-    public static void main(String[] args){
+-        Airport airport = new Airport();
+-
+-
+-
+-
+-    }
+-}
+Index: src/Priority.java
+===================================================================
+diff --git a/src/Priority.java b/src/Priority.java
+deleted file mode 100644
+--- a/src/Priority.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,3 +0,0 @@
+-public enum Priority {
+-    BUSINESS, PREMIUM_ECONOMY, ECONOMY
+-}
+Index: src/Warrent.java
+===================================================================
+diff --git a/src/Warrent.java b/src/Warrent.java
+deleted file mode 100644
+--- a/src/Warrent.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,3 +0,0 @@
+-public enum Warrent {
+-    YES, NO
+-}
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/airbus implementaion.iml" filepath="$PROJECT_DIR$/airbus implementaion.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: src/Container.java
+===================================================================
+diff --git a/src/Container.java b/src/Container.java
+deleted file mode 100644
+--- a/src/Container.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,35 +0,0 @@
+-public class Container {
+-    private final int breite = 5;
+-    private final int laenge = 3;
+-    private final int hoehe = 3;
+-    private final int maxCapacity = 45;
+-    private int remainingCapacity;
+-    private  int top;
+-    private final Baggage[] containerBaggage;
+-
+-    public Container(Baggage[] containerBaggage) {
+-        this.containerBaggage = containerBaggage;
+-    }
+-    public boolean isFull(){
+-        return top == maxCapacity - 1;
+-    }
+-    public boolean isEmpty(){
+-        return top == 0;
+-    }
+-    public void storeBaggage(Baggage baggage){
+-        if (!isFull()){
+-            containerBaggage[++top] = baggage;
+-            remainingCapacity--;
+-        } else if (isEmpty()) {
+-            System.out.println("Next container");
+-        }
+-    }
+-    public int getRemainingCapacity(){
+-        return remainingCapacity;
+-    }
+-
+-    public Baggage[] getContainerBaggage() {
+-        return containerBaggage;
+-    }
+-
+-}
+Index: src/FuelManagement.java
+===================================================================
+diff --git a/src/FuelManagement.java b/src/FuelManagement.java
+deleted file mode 100644
+--- a/src/FuelManagement.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,42 +0,0 @@
+-public class FuelManagement {
+-    private Tank centerTank;
+-    private Tank leftTank;
+-    private Tank rightTank;
+-    private JetEngine leftEngine;
+-    private JetEngine rightEngine;
+-
+-    private boolean isCenterUsed;
+-
+-    public FuelManagement(Tank centerTank, Tank leftTank, Tank rightTank, JetEngine leftEngine, JetEngine rightEngine){
+-        this.centerTank = centerTank;
+-        this.leftTank = leftTank;
+-        this.rightTank = rightTank;
+-        this.leftEngine = leftEngine;
+-        this.rightEngine = rightEngine;
+-        this.isCenterUsed = false;
+-    }
+-
+-    public void fuelEngine(){
+-        if (leftEngine.isActive() && rightEngine.isActive()){
+-            if (isCenterUsed && centerTank.getFuel()-calculateFuelConsumtion()>=0){
+-                centerTank.setFuel(centerTank.getFuel()-calculateFuelConsumtion());
+-            }else{
+-                if(leftTank.getFuel()-calculateFuelConsumtion()>= leftTank.getCapacity()/10 && rightTank.getFuel()-calculateFuelConsumtion()>= rightTank.getCapacity()/10){
+-                    leftTank.setFuel(leftTank.getFuel()-calculateFuelConsumtion());
+-                    rightTank.setFuel(rightTank.getFuel()-calculateFuelConsumtion());
+-                }else{
+-                    System.out.println("Switching to Center Tank!");
+-                    isCenterUsed = true;
+-                    centerTank.setFuel(centerTank.getFuel()-calculateFuelConsumtion());
+-                }
+-            }
+-        }else{
+-            System.out.println("The Engines are offline!");
+-        }
+-    }
+-
+-    private int calculateFuelConsumtion(){
+-        return leftEngine.getSpeed()*5;
+-    }
+-
+-}
+Index: src/ContainerLagerLeer.java
+===================================================================
+diff --git a/src/ContainerLagerLeer.java b/src/ContainerLagerLeer.java
+deleted file mode 100644
+--- a/src/ContainerLagerLeer.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,33 +0,0 @@
+-public class ContainerLagerLeer {
+-    private final Container[][] containerStorage;
+-
+-    public ContainerLagerLeer(){
+-        containerStorage = new Container[2][2];
+-    }
+-
+-    public void addContainer(Container container){
+-        for (int row = 0; row < 2; row++ ){
+-            for (int col = 0; col < 2; col++) {
+-                if (containerStorage[row][col] == null) {
+-                    containerStorage[row][col] = container;
+-                }
+-                else {
+-                    System.out.println("Container Lager ist voll");
+-                }
+-            }
+-        }
+-    }
+-
+-    public Container removeContainer() {
+-        for (int row = 2; row >= 0; row--) {
+-            for (int col = 2; col >= 0; col--) {
+-                if (containerStorage[row][col] != null) {
+-                    Container container = containerStorage[row][col];
+-                    containerStorage[row][col] = null;
+-                    return container;
+-                }
+-            }
+-        }
+-        return null;
+-    }
+-}
+Index: src/LowPressureCompressor.java
+===================================================================
+diff --git a/src/LowPressureCompressor.java b/src/LowPressureCompressor.java
+deleted file mode 100644
+--- a/src/LowPressureCompressor.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,9 +0,0 @@
+-public class LowPressureCompressor {
+-    private Unit frontUnit;
+-    private Unit backUnit;
+-
+-    public LowPressureCompressor(){
+-        this.frontUnit = new Unit(36, BladeSize.M);
+-        this.backUnit = new Unit(36, BladeSize.M);
+-    }
+-}
+Index: src/PassengerTicketMap.java
+===================================================================
+diff --git a/src/PassengerTicketMap.java b/src/PassengerTicketMap.java
+deleted file mode 100644
+--- a/src/PassengerTicketMap.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,20 +0,0 @@
+-import java.util.HashMap;
+-
+-public class PassengerTicketMap {
+-    private final HashMap<Passenger, Ticket> passengerTicketHashMap;
+-
+-
+-    public PassengerTicketMap(){
+-        passengerTicketHashMap = new HashMap<>();
+-
+-    }
+-
+-    public void add(Passenger passenger, Ticket ticket) {
+-        passengerTicketHashMap.put(passenger, ticket);
+-    }
+-
+-    public Ticket getTicket(Passenger passenger) {
+-        return passengerTicketHashMap.get(passenger);
+-    }
+-}
+-
+Index: src/Airport.java
+===================================================================
+diff --git a/src/Airport.java b/src/Airport.java
+deleted file mode 100644
+--- a/src/Airport.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,33 +0,0 @@
+-public class Airport {
+-    private Passenger passenger;
+-    private CheckInDesk[] checkInDesk;
+-    private BaggageLager baggageLager;
+-    private Wartebereich wartebereich;
+-    private Baggage[] allBaggage;
+-    private Warteschlange[] queue;
+-
+-    public Airport(int numQueue) {
+-        buildCheckInDesk(10);
+-
+-        ContainerLagerLeer containerLager = new ContainerLagerLeer();
+-        CSVReader csvReader = new CSVReader();
+-        allBaggage =  csvReader.baggages.toArray(new Baggage[csvReader.getBaggages().size()]);
+-
+-        Lager lager = new Lager();
+-
+-        queue = new Warteschlange[numQueue];
+-        for (int i = 0; i < numQueue; i++)
+-            queue[i] = new Warteschlange();
+-    }
+-
+-
+-    private void buildCheckInDesk(int anzahlCheckIn) {
+-        for (int i = 0; i < anzahlCheckIn; i++) {
+-            new CheckInDesk();
+-        }
+-    }
+-
+-    public Baggage[] getAllBaggage(){
+-        return allBaggage;
+-    }
+-}
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: src/Body.java
+===================================================================
+diff --git a/src/Body.java b/src/Body.java
+deleted file mode 100644
+--- a/src/Body.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,36 +0,0 @@
+-public class Body {
+-    private Cabin businessClass;
+-    private Cabin premiumClass;
+-    private Cabin[] economy;
+-
+-    public Body(){
+-        this.economy = new Cabin[5];
+-        this.businessClass = new Cabin(CabinType.BUSINESS_CLASS, 1, 8, new char[] {'A','C','D','G','H','K'}, 48);
+-        this.premiumClass = new Cabin(CabinType.PREMIUM_ECONOMY, 12, 15, new char[] {'A','C','D','E','G','H','K'}, 21);
+-        this.economy[0] = new Cabin(CabinType.ECONOMY, 16, 16, new char[] {'A','C','D','E','G'}, 5);
+-        this.economy[1] = new Cabin(CabinType.ECONOMY, 18, 26, new char[] {'A','B','C','D','E','G','H','J','K'}, 81);
+-        this.economy[2] = new Cabin(CabinType.ECONOMY, 27, 27, new char[] {'B','C','D','E','G','H','J'}, 7);
+-        this.economy[3] = new Cabin(CabinType.ECONOMY, 28, 41, new char[] {'A','B','C','D','E','G','H','J','K'}, 126);
+-        this.economy[3] = new Cabin(CabinType.ECONOMY, 42, 42, new char[] {'A','C','D','E','G'}, 5);
+-    }
+-
+-    public String toString(){
+-        return economy.toString()+"\n"+premiumClass.toString()+"\n"+createString()+"\n: "+calculateSeats();
+-    }
+-
+-    private String createString(){
+-        String s = "";
+-        for (int i = 0; i < economy.length; i++) {
+-            s = s+economy[i].toString()+"\n";
+-        }
+-        return s;
+-    }
+-
+-    private int calculateSeats(){
+-        int sum = businessClass.getSeatsOverall()+ premiumClass.getSeatsOverall();
+-        for (int i = 0; i < economy.length; i++) {
+-            sum = sum+economy[i].getSeatsOverall();
+-        }
+-        return sum;
+-    }
+-}
+Index: src/Airplane.java
+===================================================================
+diff --git a/src/Airplane.java b/src/Airplane.java
+deleted file mode 100644
+--- a/src/Airplane.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,51 +0,0 @@
+-import java.util.Date;
+-
+-public class Airplane {
+-    private Body body;
+-    private Wing leftWing;
+-    private Wing rightWing;
+-
+-    private final String manufacturer;
+-    private final String model;
+-    private final double overallLength;
+-    private final double cabinLength;
+-    private final double wingSpan;
+-    private final double height;
+-    private final int range;
+-    private final String mmo;
+-    private final int maximumTakeoffWeight;
+-    private final double enginePower;
+-    private final double cruisingSpeed;
+-    private final double fuelConsumption;
+-    private final String id;
+-    private String carrier;
+-    private final String serialNumber;
+-    private final Date manufacturingDate;
+-    private final String delivery;
+-
+-    public Airplane (Body body, Wing leftWing, Wing rightWing, String manufacturer, String model, double overallLength,
+-                     double cabinLength, double wingSpan, double height, int range, String mmo, int maximumTakeoffWeight,
+-                     double enginePower, double cruisingSpeed, double fuelConsumption, String id, String carrier,
+-                     String serialNumber, Date manufacturingDate, String delivery){
+-        this.body = body;
+-        this.leftWing = leftWing;
+-        this.rightWing = rightWing;
+-        this.manufacturer = manufacturer;
+-        this.model = model;
+-        this.overallLength = overallLength;
+-        this.cabinLength = cabinLength;
+-        this.wingSpan = wingSpan;
+-        this.height = height;
+-        this.range = range;
+-        this.mmo = mmo;
+-        this.maximumTakeoffWeight = maximumTakeoffWeight;
+-        this.enginePower = enginePower;
+-        this.cruisingSpeed = cruisingSpeed;
+-        this.fuelConsumption = fuelConsumption;
+-        this.id = id;
+-        this.carrier = carrier;
+-        this.serialNumber = serialNumber;
+-        this.manufacturingDate = manufacturingDate;
+-        this.delivery = delivery;
+-    }
+-}
+Index: src/Lift.java
+===================================================================
+diff --git a/src/Lift.java b/src/Lift.java
+deleted file mode 100644
+--- a/src/Lift.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,2 +0,0 @@
+-public class Lift {
+-}
+Index: src/RobotArm.java
+===================================================================
+diff --git a/src/RobotArm.java b/src/RobotArm.java
+deleted file mode 100644
+--- a/src/RobotArm.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,14 +0,0 @@
+-public class RobotArm {
+-
+-    public RobotArm(){
+-
+-    }
+-    public void addBaggagetoLager(){
+-
+-    }
+-
+-    //public void sortContainers(Container[] containers, Baggage[] baggages){
+-      //  Baggage baggage;
+-
+-    //}
+-}
+Index: src/CSVReader.java
+===================================================================
+diff --git a/src/CSVReader.java b/src/CSVReader.java
+deleted file mode 100644
+--- a/src/CSVReader.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,182 +0,0 @@
+-import java.io.BufferedReader;
+-import java.io.FileReader;
+-import java.time.LocalDate;
+-import java.time.LocalTime;
+-import java.time.format.DateTimeFormatter;
+-import java.time.format.DateTimeParseException;
+-import java.util.ArrayList;
+-import java.util.List;
+-import java.util.TreeMap;
+-
+-public class CSVReader {
+-    private LocalDate dateOfBirth;
+-    private String[] tokenArray;
+-    List<Passenger> passengers = new ArrayList<>();
+-    TreeMap<String, Ticket> tickets= new TreeMap<>();
+-    List<Baggage> baggages = new ArrayList<>();
+-
+-    public CSVReader(){
+-        readFromCss();
+-    }
+-
+-    public void readFromCss(){
+-        PassengerTicketMap passengerTicketMap = new PassengerTicketMap();
+-
+-        try {
+-            String line;
+-            BufferedReader bufferedReader = new BufferedReader(new FileReader(Configuration.INSTANCE.dataFile));
+-
+-            while ((line = bufferedReader.readLine()) != null) {
+-                tokenArray = line.split(Configuration.INSTANCE.csvDelimiter);
+-                String role = tokenArray[1];
+-                if (!role.equals("Passenger")) {
+-                    continue;
+-                }
+-                //passenger erstellen und array list hinzufügen
+-                Passenger passenger = createPassenger();
+-                passengers.add(passenger);
+-                //ticket erstellen und Treemap hinzufügen
+-                Ticket ticket = createTicket();
+-                tickets.put(ticket.getUuid(),ticket);
+-                passenger.setTicket(ticket);
+-                passengerTicketMap.add(passenger, ticket);
+-
+-
+-            }
+-        } catch (Exception e) {
+-            System.out.println(e.getMessage());
+-        }
+-
+-    }
+-
+-    public List<Passenger> getPassengers(){
+-        return passengers;
+-    }
+-
+-    public TreeMap<String, Ticket> getTickets(){
+-        return tickets;
+-    }
+-
+-    public List<Baggage> getBaggages(){
+-        return baggages;
+-    }
+-
+-
+-    private Passenger createPassenger(){
+-        //Name
+-        String[] nameToken = tokenArray[2].split(" ");
+-        String firstName = nameToken[0];
+-        String lastName = nameToken[1];
+-
+-        //gender
+-        String gender = tokenArray[3];
+-
+-        //Datum
+-        String dateOfBirthString = tokenArray[4];
+-        convertStringtoDate(dateOfBirthString);
+-
+-        //PassportID
+-        String passportID = tokenArray[5];
+-
+-        //Baggage
+-        String baggageCountString = tokenArray[16];
+-        int baggageCount = Integer.parseInt(baggageCountString);
+-        String[] weightToken = tokenArray[17].split(" ");
+-        for (int i = 0; i < baggageCount; i++) {
+-            double weight = Double.parseDouble(weightToken[i]);
+-            baggages.add(new Baggage(weight, determinePriority(tokenArray[14])));
+-        }
+-        //Iris
+-        String humaniris = tokenArray[6];
+-
+-        //Fingerprint
+-        String humanfingerprint = tokenArray[7];
+-
+-        //Warrent
+-        Warrent warrent = determineWarrent(tokenArray[18]);
+-
+-
+-
+-
+-        //Passenger erstellen
+-        return new Passenger(firstName, lastName, gender, dateOfBirth, passportID, baggages, humaniris, humanfingerprint, warrent);
+-    }
+-
+-    private Ticket createTicket(){
+-
+-        //uuid
+-        String uuid = tokenArray [0];
+-
+-        // bookingID
+-        String bookingID = tokenArray[8];
+-
+-        // flight
+-        String flight = tokenArray[9];
+-
+-        // from
+-        String from = tokenArray[10];
+-
+-        // to
+-        String to = tokenArray[11];
+-
+-        // departure
+-        LocalTime departure = LocalTime.parse(tokenArray[12]);
+-
+-        // arrival
+-        LocalTime arrival = convertOffset(tokenArray[13]) ;
+-
+-
+-        // bookingClass
+-        String bookingClass = tokenArray[14];
+-
+-        //  seat
+-        String seat = tokenArray[15];
+-
+-        //ticket erstellen
+-        return new Ticket(uuid, bookingID, flight, from, to, departure, arrival, bookingClass, seat);
+-
+-    }
+-
+-
+-    private void convertStringtoDate(String dateString){
+-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+-        try {
+-            dateOfBirth = LocalDate.parse(dateString, formatter);
+-        } catch (DateTimeParseException e) {
+-            System.out.println("ungültiges Geburtsdatum");
+-
+-        }
+-    }
+-
+-    private LocalTime convertOffset(String arrivalString){
+-        String[] partArrival = arrivalString.split("\\+");
+-        String arrivalTime = partArrival[0];
+-        int arrivalOffset = Integer.parseInt(partArrival[1]);
+-        LocalTime arrival = LocalTime.parse(arrivalTime);
+-        arrival = arrival.plusHours(arrivalOffset);
+-        return arrival;
+-
+-    }
+-    private Priority determinePriority(String bookingClass){
+-        switch (bookingClass) {
+-            case "BUSINESS":
+-                return Priority.BUSINESS;
+-            case "PREMIUM_ECONOMY":
+-                return Priority.PREMIUM_ECONOMY;
+-            default:
+-                return Priority.ECONOMY;
+-        }
+-    }
+-
+-    private Warrent determineWarrent(String warrentString){
+-        switch (warrentString){
+-            case "YES":
+-                return Warrent.YES;
+-            case "NO":
+-                return Warrent.NO;
+-            default:
+-                return Warrent.NO;
+-        }
+-    }
+-
+-}
+Index: src/HumanFingerprint.java
+===================================================================
+diff --git a/src/HumanFingerprint.java b/src/HumanFingerprint.java
+deleted file mode 100644
+--- a/src/HumanFingerprint.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,6 +0,0 @@
+-public class HumanFingerprint {
+-    String humanFingerprint;
+-    public HumanFingerprint(String humanFingerprint){
+-        this.humanFingerprint = humanFingerprint;
+-    }
+-}
+Index: src/Blade.java
+===================================================================
+diff --git a/src/Blade.java b/src/Blade.java
+deleted file mode 100644
+--- a/src/Blade.java	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
++++ /dev/null	(revision 38308c78a6c9d17865f4466f26ab4727bcdbc807)
+@@ -1,7 +0,0 @@
+-public class Blade {
+-    private BladeSize bladeSize;
+-
+-    public Blade(BladeSize bladeSize){
+-        this.bladeSize = bladeSize;
+-    }
+-}
