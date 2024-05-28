@@ -1,4 +1,6 @@
-public class Container {
+import java.util.Comparator;
+
+public class Container{
     private final int breite = 5;
     private final int laenge = 3;
     private final int hoehe = 3;
@@ -51,5 +53,4 @@ public class Container {
         return sum;
 
     }
-
 }
