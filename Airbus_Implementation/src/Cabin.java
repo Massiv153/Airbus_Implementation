@@ -1,17 +1,26 @@
+import java.util.ArrayList;
+
 public class Cabin {
     private CabinType cabinType;
     private int startRow;
     private int endRow;
-    private char[] seats;
+    private char[] letters;
     private int seatsOverall;
     private ArrayList<Seat> seats;
 
     public Cabin(CabinType cabinType, int startRow, int endRow, char[] seats, int seatsOverall){
+        this.seats = new ArrayList<Seat>();
         this.cabinType = cabinType;
         this.startRow = startRow;
         this.endRow = endRow;
-        this.seats = seats;
+        this.letters = seats;
         this.seatsOverall = seatsOverall;
+
+        for (int i = startRow; i < endRow; i++) {
+            for (char c: seats){
+                this.seats.add(new Seat(i,c));
+            }
+        }
     }
 
     public String toString(){
@@ -31,5 +40,9 @@ public class Cabin {
             }
         }
         return s;
+    }
+
+    public ArrayList<Seat> getSeats() {
+        return seats;
     }
 }

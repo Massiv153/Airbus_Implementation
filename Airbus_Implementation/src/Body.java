@@ -33,4 +33,17 @@ public class Body {
         }
         return sum;
     }
+
+    public Cabin getPremiumClass() {
+        return premiumClass;
+    }
+
+    public Cabin[] getEconomy() {
+        return economy;
+    }
+
+    public Cabin getBusinessClass() {
+        return businessClass;
+    }
+
 }

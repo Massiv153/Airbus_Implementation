@@ -50,4 +50,8 @@ public class Airplane {
         this.manufacturingDate = manufacturingDate;
         this.delivery = delivery;
     }
+
+    public Body getBody() {
+        return body;
+    }
 }

@@ -36,4 +36,8 @@ public class Ticket {
     public void setSequenceIDList(List<Integer> sequenceIDList) {
         this.sequenceIDList = sequenceIDList;
     }
+
+    public BookingClass getBookingClass() {
+        return bookingClass;
+    }
 }
