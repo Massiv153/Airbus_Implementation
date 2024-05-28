@@ -9,15 +9,17 @@ public class Passenger extends Human{
     private String passportID;
     private Ticket ticket;
     private Reader reader;
-    private boolean hasWarrant;
+    private Warrent hasWarrant;
+    private BoardingPass boardingPass;
 
 
     public Passenger(String firstname, String lastname, String gender, LocalDate dateofbirth, String passportID,List<Baggage> baggages, String humanIris, String humanFingerprint, Warrent warrent){
         super(firstname, lastname, gender, dateofbirth, humanIris, humanFingerprint);
         this.passportID = passportID;
         this.baggages = baggages;
-        this.hasWarrant = hasWarrant;
+        this.hasWarrant = warrent;
         this.baggages = new ArrayList<>();
+
 
     }
 
@@ -45,7 +47,7 @@ public class Passenger extends Human{
         }
     }
 
-    public boolean hasWarrant() {
+    public Warrent hasWarrant() {
         return hasWarrant;
     }
 
@@ -55,5 +57,13 @@ public class Passenger extends Human{
 
     public void addBaggage(Baggage baggage) {
         baggages.add(baggage);
+    }
+
+    public void setBoardingPass(BoardingPass boardingPass) {
+        this.boardingPass = boardingPass;
+    }
+
+    public BoardingPass getBoardingPass() {
+        return boardingPass;
     }
 }
