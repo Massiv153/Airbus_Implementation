@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class CheckInDesk {
@@ -8,14 +9,15 @@ public class CheckInDesk {
     private Reader[] reader;
     private FederalPoliceOfficer federalPoliceOfficer;
     private Container[] containers;
-    private ContainerLagerLeer containerLagerLeer;
     private final RobotArm robotArm;
 
-    public CheckInDesk(ContainerLagerLeer containerLagerLeer) {
-        this.containerLagerLeer = containerLagerLeer;
+    private Baggage[] baggages;
+
+    public CheckInDesk(ContainerLagerLeer containerLagerLeer, Baggage[] baggages) {
         this.conveyorBelt = new ConveyorBelt();
         BaggageLager baggageLager = new BaggageLager();
         this.robotArm = new RobotArm(conveyorBelt, baggageLager, containerLagerLeer);
+        this.baggages = baggages;
         Warteschlange warteschlange = new Warteschlange();
         Printer printer = new Printer();
 
@@ -39,6 +41,10 @@ public class CheckInDesk {
                     printer.printBoardingPass(passenger);
             }
         }
+    }
+
+    public Baggage[] getBaggages() {
+        return baggages;
     }
 
 }

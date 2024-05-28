@@ -3,15 +3,15 @@ import java.time.LocalTime;
 public class Ticket {
 
 
-    private String uuid;
-    private String bookingID;
-    private String flight;
-    private String from;
-    private String to;
-    private LocalTime departure;
-    private LocalTime arrival;
-    private BookingClass bookingClass;
-    private String seat;
+    private final String uuid;
+    private final String bookingID;
+    private final String flight;
+    private final String from;
+    private final String to;
+    private final LocalTime departure;
+    private final LocalTime arrival;
+    private final BookingClass bookingClass;
+    private final String seat;
 
     public Ticket(String uuid, String bookingID, String flight, String from, String to,
                   LocalTime departure, LocalTime arrival, BookingClass bookingClass, String seat){

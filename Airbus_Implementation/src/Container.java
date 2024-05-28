@@ -3,6 +3,7 @@ public class Container {
     private final int laenge = 3;
     private final int hoehe = 3;
     private final int maxCapacity = 45;
+    private int remainingCapacity;
     private  int top;
     private final Baggage[] containerBaggage;
 
@@ -10,17 +11,23 @@ public class Container {
         this.containerBaggage = new Baggage[maxCapacity];
         top = -1;
     }
+
     public boolean isFull(){
         return top == maxCapacity - 1;
     }
     public boolean isEmpty(){
         return top == -1;
     }
+    public int getRemainingCapacity(){
+        int usedCapacity = top + 1;
+        return maxCapacity - usedCapacity;
+    }
+
     public void push(Baggage baggage){
         if (!isFull()){
             containerBaggage[++top] = baggage;
-        } else if (isEmpty()) {
-            System.out.println("Next container");
+        } else {
+            throw new IllegalStateException("Container ist Voll");
         }
     }
     public Baggage pop(){

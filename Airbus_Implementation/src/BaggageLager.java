@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class BaggageLager {
     private Baggage[][][] lager;
     private CheckInDesk checkInDesk;
@@ -21,31 +23,27 @@ public class BaggageLager {
         }
     }
 
-    public Baggage removeBaggage(){
-        Baggage prioBaggage = sortContainers();
-        baggage = prioBaggage;
-        prioBaggage = null;
-        return baggage;
 
-    }
 
-    private Baggage sortContainers(){
-        Baggage highPrioBaggage = null;
-        int highestPrio = 0;
+    public Baggage findAndRemoveBaggageByPriority(int targetPriority) {
+        Baggage foundBaggage = null;
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 for (int k = 0; k < 5; k++) {
-                    if (assignPriority(lager[j][k][i]) > highestPrio){
-                        highestPrio = assignPriority(lager[j][k][i]);
-                        highPrioBaggage = lager[j][k][i];
+                    Baggage baggage = lager[j][k][i];
+                    if (baggage != null && assignPriority(baggage) == targetPriority) {
+                        foundBaggage = baggage;
+                        lager[j][k][i] = null;
+                        return foundBaggage;
                     }
-
                 }
             }
         }
-        return highPrioBaggage;
-    }
+        return foundBaggage;
 
+
+
+    }
 
     private int assignPriority(Baggage baggage){
         switch (baggage.getPriority()){
@@ -57,6 +55,36 @@ public class BaggageLager {
                 return 1;
             default: return 0;
         }
+    }
+
+    public int countBaggages(){
+        int count = 0;
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                for (int k = 0; k < 5; k++) {
+                    if (lager[i][j][k] != null){
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
+    public int[] countBaggagesbyPriority(){
+        int [] count = new int[3];
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < 10; j++) {
+                for (int k = 0; k < 5; k++) {
+                    Baggage baggage = lager[j][k][i];
+                    if (baggage != null) {
+                        int priority = assignPriority(baggage);
+                        count[priority - 1]++;
+                    }
+                }
+            }
+        }
+        return count;
     }
 }
 
