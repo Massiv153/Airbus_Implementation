@@ -1,65 +1,73 @@
-import java.util.ArrayList;
-import java.util.Comparator;
+import java.util.*;
 import java.io.FileWriter;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import java.io.IOException;
 
 public class CargoArea {
-    private ArrayList<Container> cargoArea = new ArrayList<Container>();
-    private Container[] cargoLeft = new Container[3];
-    private Container[] cargoRight = new Container[3];
+    private Airport airport;
+    private Container[] cargoLeft;
+    private Container[] cargoRight;
+    private ArrayList<Container> plan;
 
-    public void CargoArea(Container[] containers){
-        double totalWeight=0;
-        int amountContainers= 0;
-        for(int i=0; i<=containers.length;i++){
-            totalWeight =+ containers[i].getContainerWeight();
-            cargoArea.add(containers[i]);
-            amountContainers = i;
+    public void CargoArea(Airport airport){
+        this.airport = airport;
+        ArrayList<Container> plan = new ArrayList<Container>();
+        this.cargoLeft = new Container[3];
+        this.cargoRight = new Container[3];
+    }
+
+    private void optimize(ArrayList<Container> containers) {
+        Collections.sort(containers,new ContainerComparator());
+        ArrayList<Container> rechts = new ArrayList<Container>();
+        ArrayList<Container> links = new ArrayList<Container>();
+        for (Container container : containers) {
+            if ((weightSum(rechts) > weightSum(links) && rechts.size() <= 4) || links.size() > 4) {
+                rechts.add(container);
+            } else {
+                links.add(container);
+            }
         }
-        double median = totalWeight/amountContainers;
-        cargoArea.sort(Comparator.comparingDouble(Container::getContainerWeight));
-
-
-        for(int i=0;i<=3;i+=2){
-            cargoLeft[i]=cargoArea.getLast();
-            cargoLeft[i+1]=cargoArea.getFirst();
-            cargoArea.removeFirst();
-            cargoArea.removeLast();
-            cargoRight[i]=cargoArea.getLast();
-            cargoRight[i+1]=cargoArea.getFirst();
-            cargoArea.removeFirst();
-            cargoArea.removeLast();
+        for (Container container : links){
+            plan.add(container);
         }
-        return;
+        for (Container container : rechts){
+            plan.add(container);
+        }
+    }
 
+    private double weightSum(ArrayList<Container> containers){
+        int sum = 0;
+        for(Container container:containers){
+            sum += container.getContainerWeight();
+        }
+        return sum;
     }
 
     public void exportToJson(Container[] containers, String filename) {
-        JSONArray containerArray = new JSONArray();
-        JSONArray baggageArray = new JSONArray();
-
-        // Export containers
-        for (Container container : containers) {
-            JSONObject containerObject = new JSONObject();
-            containerObject.put("weight", container.getContainerWeight());
-            containerArray.add(containerObject);
+        JSONObject containerObject = new JSONObject();
+        for (int i = 0; i < 8; i++) {
+            if (i < 4) {
+                containerObject.put(i, plan.get(i));
+            } else {
+                containerObject.put(i, plan.get(i));
+            }
         }
 
-
-        // Create a JSON object to hold both arrays
-        JSONObject data = new JSONObject();
-        data.put("containers", containerArray);
-        data.put("baggage", baggageArray);
-
-        // Write JSON object to file
         try (FileWriter file = new FileWriter(filename)) {
-            file.write(data.toJSONString());
+            file.write(containerObject.toJSONString());
             System.out.println("JSON data exported to " + filename);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public Container[] getCargoRight() {
+        return cargoRight;
+    }
+
+    public Container[] getCargoLeft() {
+        return cargoLeft;
     }
 }
 

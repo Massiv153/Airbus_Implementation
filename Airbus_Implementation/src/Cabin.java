@@ -4,6 +4,7 @@ public class Cabin {
     private int endRow;
     private char[] seats;
     private int seatsOverall;
+    private ArrayList<Seat> seats;
 
     public Cabin(CabinType cabinType, int startRow, int endRow, char[] seats, int seatsOverall){
         this.cabinType = cabinType;

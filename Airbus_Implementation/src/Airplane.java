@@ -4,6 +4,7 @@ public class Airplane {
     private Body body;
     private Wing leftWing;
     private Wing rightWing;
+    private CargoArea cargoArea;
 
     private final String manufacturer;
     private final String model;
@@ -23,13 +24,14 @@ public class Airplane {
     private final Date manufacturingDate;
     private final String delivery;
 
-    public Airplane (Body body, Wing leftWing, Wing rightWing, String manufacturer, String model, double overallLength,
+    public Airplane (Body body, Wing leftWing, Wing rightWing, CargoArea cargoArea, String manufacturer, String model, double overallLength,
                      double cabinLength, double wingSpan, double height, int range, String mmo, int maximumTakeoffWeight,
                      double enginePower, double cruisingSpeed, double fuelConsumption, String id, String carrier,
                      String serialNumber, Date manufacturingDate, String delivery){
         this.body = body;
         this.leftWing = leftWing;
         this.rightWing = rightWing;
+        this.cargoArea = cargoArea;
         this.manufacturer = manufacturer;
         this.model = model;
         this.overallLength = overallLength;
