@@ -1,6 +1,6 @@
 public class Airport {
     private Passenger passenger;
-    private CheckInDesk[] checkInDesk;
+    private final CheckInDesk[] checkInDesk;
     private BaggageLager baggageLager;
     private Wartebereich wartebereich;
     private Baggage[] allBaggage;
@@ -11,10 +11,10 @@ public class Airport {
 
     public Airport() {
         ContainerLagerLeer containerLager = new ContainerLagerLeer();
-        buildCheckInDesk();
         CSVReader csvReader = new CSVReader();
         allBaggage =  csvReader.baggages.toArray(new Baggage[csvReader.getBaggages().size()]);
         checkInDesk = new CheckInDesk[10];
+        buildCheckInDesk();
 
         queue = new Warteschlange[10];
         for (int i = 0; i < 10; i++)
@@ -25,7 +25,7 @@ public class Airport {
 
     private void buildCheckInDesk() {
         for (int i = 0; i < 10; i++) {
-            new CheckInDesk(containerLager, allBaggage);
+            checkInDesk[i] = new CheckInDesk(containerLager);
         }
     }
 

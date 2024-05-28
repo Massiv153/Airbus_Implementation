@@ -1,7 +1,7 @@
 import java.util.List;
 
 public class BaggageLager {
-    private Baggage[][][] lager;
+    private final Baggage[][][] lager;
     private CheckInDesk checkInDesk;
     private Baggage baggage;
 
@@ -24,7 +24,6 @@ public class BaggageLager {
     }
 
 
-
     public Baggage findAndRemoveBaggageByPriority(int targetPriority) {
         Baggage foundBaggage = null;
         for (int i = 0; i < 10; i++) {
@@ -40,9 +39,6 @@ public class BaggageLager {
             }
         }
         return foundBaggage;
-
-
-
     }
 
     private int assignPriority(Baggage baggage){

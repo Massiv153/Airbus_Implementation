@@ -11,13 +11,12 @@ public class CheckInDesk {
     private Container[] containers;
     private final RobotArm robotArm;
 
-    private Baggage[] baggages;
 
-    public CheckInDesk(ContainerLagerLeer containerLagerLeer, Baggage[] baggages) {
+
+    public CheckInDesk(ContainerLagerLeer containerLagerLeer) {
         this.conveyorBelt = new ConveyorBelt();
         BaggageLager baggageLager = new BaggageLager();
         this.robotArm = new RobotArm(conveyorBelt, baggageLager, containerLagerLeer);
-        this.baggages = baggages;
         Warteschlange warteschlange = new Warteschlange();
         Printer printer = new Printer();
 
@@ -42,9 +41,4 @@ public class CheckInDesk {
             }
         }
     }
-
-    public Baggage[] getBaggages() {
-        return baggages;
-    }
-
 }

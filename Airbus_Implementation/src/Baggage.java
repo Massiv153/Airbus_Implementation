@@ -1,7 +1,7 @@
 public class Baggage {
 
     private final double baggageWeight;
-    private BookingClass bookingClass;
+    private final BookingClass bookingClass;
 
     public Baggage(double baggageWeight, BookingClass bookingClass){
         this.baggageWeight = baggageWeight;

@@ -1,6 +1,6 @@
 public class BodyPart {
-    private String name;
-    private String side;
+    private final String name;
+    private final String side;
 
 
 

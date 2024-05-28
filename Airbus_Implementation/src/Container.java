@@ -2,7 +2,7 @@ public class Container {
     private final int breite = 5;
     private final int laenge = 3;
     private final int hoehe = 3;
-    private final int maxCapacity = 45;
+    private final int maxCapacity = breite*laenge*hoehe;
     private int remainingCapacity;
     private  int top;
     private final Baggage[] containerBaggage;

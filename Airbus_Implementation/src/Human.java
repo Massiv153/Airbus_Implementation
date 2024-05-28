@@ -1,20 +1,17 @@
 import java.time.LocalDate;
 
 public class Human {
-    private String firstName;
-    private String lastName;
-    private String gender;
-    private LocalDate dateOfBirth;
-    private HumanHead head;
-    private HumanBody body;
-    private HumanArm leftarm;
-    private HumanArm rightarm;
-    private HumanHand lefthand;
-    private HumanHand righthand;
-    private HumanLeg leftLeg;
-    private HumanLeg rightLeg;
-    private HumanIris humanIris;
-    private HumanFingerprint humanFingerprint;
+    private final String firstName;
+    private final String lastName;
+    private final String gender;
+    private final LocalDate dateOfBirth;
+    private final HumanHead head;
+    private final HumanBody body;
+    private final HumanArm[] humanArms;
+    private final HumanHand[] humanHands;
+    private final HumanLeg[] humanLegs;
+    private final HumanIris humanIris;
+    private final HumanFingerprint humanFingerprint;
 
 
     public Human(String firstName, String lastName, String gender, LocalDate dateOfBirth, String humanIris, String humanFingerprint) {
@@ -22,14 +19,11 @@ public class Human {
         this.lastName = lastName;
         this.gender = gender;
         this.dateOfBirth = dateOfBirth;
+        humanArms = new HumanArm[2];
+        humanHands = new HumanHand[2];
+        humanLegs = new HumanLeg[2];
         this.head = new HumanHead();
         this.body = new HumanBody();
-        this.leftarm = new HumanArm("left");
-        this.rightarm = new HumanArm("right");
-        this.lefthand = new HumanHand("left");
-        this.righthand = new HumanHand("right");
-        this.leftLeg = new HumanLeg("left");
-        this.rightLeg = new HumanLeg("right");
         this.humanIris = new HumanIris(humanIris);
         this.humanFingerprint = new HumanFingerprint(humanFingerprint);
     }
@@ -56,30 +50,6 @@ public class Human {
 
     public HumanBody getBody() {
         return body;
-    }
-
-    public HumanArm getLeftarm() {
-        return leftarm;
-    }
-
-    public HumanArm getRightarm() {
-        return rightarm;
-    }
-
-    public HumanHand getLefthand() {
-        return lefthand;
-    }
-
-    public HumanHand getRighthand() {
-        return righthand;
-    }
-
-    public HumanLeg getLeftLeg() {
-        return leftLeg;
-    }
-
-    public HumanLeg getRightLeg() {
-        return rightLeg;
     }
 
     public HumanIris getHumanIris() {
