@@ -4,26 +4,30 @@ public class Airport {
     private BaggageLager baggageLager;
     private Wartebereich wartebereich;
     private Baggage[] allBaggage;
+    private ContainerLagerLeer containerLager;
+
     private Warteschlange[] queue;
 
-    public Airport(int numQueue) {
-        buildCheckInDesk(10);
 
+    public Airport() {
         ContainerLagerLeer containerLager = new ContainerLagerLeer();
+        buildCheckInDesk();
         CSVReader csvReader = new CSVReader();
         allBaggage =  csvReader.baggages.toArray(new Baggage[csvReader.getBaggages().size()]);
-
+        //containers = new Container[8];
         Lager lager = new Lager();
+        checkInDesk = new CheckInDesk[10];
 
-        queue = new Warteschlange[numQueue];
-        for (int i = 0; i < numQueue; i++)
+        queue = new Warteschlange[10];
+        for (int i = 0; i < 10; i++)
             queue[i] = new Warteschlange();
+
     }
 
 
-    private void buildCheckInDesk(int anzahlCheckIn) {
-        for (int i = 0; i < anzahlCheckIn; i++) {
-            new CheckInDesk();
+    private void buildCheckInDesk() {
+        for (int i = 0; i < 10; i++) {
+            new CheckInDesk(containerLager);
         }
     }
 

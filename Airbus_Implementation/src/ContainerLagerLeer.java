@@ -3,6 +3,15 @@ public class ContainerLagerLeer {
 
     public ContainerLagerLeer(){
         containerStorage = new Container[2][2];
+        initializeContainer();
+    }
+
+    private void initializeContainer(){
+        for (int i = 0; i < 2; i++){
+            for (int j = 0; j < 2;j++){
+                containerStorage[i][j] = new Container();
+            }
+        }
     }
 
     public void addContainer(Container container){
@@ -18,16 +27,26 @@ public class ContainerLagerLeer {
         }
     }
 
-    public Container removeContainer() {
+    public Container getContainer() {
         for (int row = 2; row >= 0; row--) {
             for (int col = 2; col >= 0; col--) {
                 if (containerStorage[row][col] != null) {
-                    Container container = containerStorage[row][col];
-                    containerStorage[row][col] = null;
-                    return container;
+                    return containerStorage[row][col];
                 }
             }
         }
         return null;
     }
+    public void removeContainer(){
+        for (int row = 2; row >= 0; row--) {
+            for (int col = 2; col >= 0; col--) {
+                if (containerStorage[row][col] != null) {
+                    containerStorage[row][col] = null;
+                }
+            }
+        }
+    }
+
+
+
 }
