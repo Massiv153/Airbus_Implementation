@@ -14,9 +14,9 @@ public class CheckInDesk {
 
 
 
-    public CheckInDesk(ContainerLagerLeer containerLagerLeer) {
+    public CheckInDesk(ContainerLagerLeer containerLagerLeer, BaggageLager baggageLager) {
         this.conveyorBelt = new ConveyorBelt();
-        BaggageLager baggageLager = new BaggageLager();
+
         this.robotArm = new RobotArm(conveyorBelt, baggageLager, containerLagerLeer);
         Warteschlange warteschlange = new Warteschlange();
         Printer printer = new Printer();
@@ -42,4 +42,9 @@ public class CheckInDesk {
             }
         }
     }
+
+    public RobotArm getRobotArm() {
+        return robotArm;
+    }
+
 }

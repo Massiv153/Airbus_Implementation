@@ -3,17 +3,12 @@ public class RobotArm {
     private final BaggageLager baggageLager;
     private final ContainerLagerLeer containerLagerLeer;
     private Container container;
-    private final Container[] fullContainers;
-    private int fullContainerIndex;
 
     public RobotArm(ConveyorBelt conveyorBelt, BaggageLager baggageLager, ContainerLagerLeer containerLagerLeer){
         this.conveyorBelt = conveyorBelt;
         this.baggageLager = baggageLager;
         this.containerLagerLeer = containerLagerLeer;
         container = takeContainer();
-        fullContainers = new Container[8];
-        fullContainerIndex = 0;
-
     }
     public void addBaggagetoLager(){
         if (conveyorBelt.getBaggage() != null){
@@ -29,7 +24,7 @@ public class RobotArm {
         int[] priorityToLoad  = calculateBaggageInContainer();
         while (baggageLager.countBaggages() > 0) {
             for (int priority = 0; priority < 3; priority++){
-                for (int i = 0; i < priorityToLoad [priority]; i++){
+                for (int i = 0; i < priorityToLoad[priority]; i++){
                     Baggage baggage = baggageLager.findAndRemoveBaggageByPriority(priority);
                         if (baggage != null){
                             if (container != null && !container.isFull()) {
@@ -46,8 +41,7 @@ public class RobotArm {
                             }
                 }
             }
-
-            fullContainers[fullContainerIndex++] = container;
+            baggageLager.addFullContainer(container);
             container = takeContainer();
             priorityToLoad  = calculateBaggageInContainer();
         }
@@ -87,9 +81,4 @@ public class RobotArm {
 
         return priorityToLoad;
     }
-
-    public Container[] getFullContainers() {
-        return fullContainers;
-    }
-
 }

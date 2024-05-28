@@ -12,6 +12,7 @@ public class Airport {
     public Airport() {
         ContainerLagerLeer containerLager = new ContainerLagerLeer();
         CSVReader csvReader = new CSVReader();
+        BaggageLager baggageLager = new BaggageLager();
         allBaggage =  csvReader.baggages.toArray(new Baggage[csvReader.getBaggages().size()]);
         checkInDesk = new CheckInDesk[10];
         buildCheckInDesk();
@@ -20,12 +21,15 @@ public class Airport {
         for (int i = 0; i < 10; i++)
             queue[i] = new Warteschlange();
 
+
+        baggageLager.getFullContainers();
+
     }
 
 
     private void buildCheckInDesk() {
         for (int i = 0; i < 10; i++) {
-            checkInDesk[i] = new CheckInDesk(containerLager);
+            checkInDesk[i] = new CheckInDesk(containerLager, baggageLager);
         }
     }
 

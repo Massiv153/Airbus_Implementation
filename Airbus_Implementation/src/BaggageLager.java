@@ -4,9 +4,14 @@ public class BaggageLager {
     private final Baggage[][][] lager;
     private CheckInDesk checkInDesk;
     private Baggage baggage;
+    private final Container[] fullContainers;
+    private int fullContainerIndex;
+
 
     public BaggageLager(){
         lager = new Baggage[10][10][5];
+        fullContainers = new Container[8];
+        int fullContainerIndex = 0;
 
 
     }
@@ -81,6 +86,14 @@ public class BaggageLager {
             }
         }
         return count;
+    }
+
+    public void addFullContainer(Container container){
+        fullContainers[fullContainerIndex++] = container;
+    }
+
+    public Container[] getFullContainers(){
+        return fullContainers;
     }
 }
 
