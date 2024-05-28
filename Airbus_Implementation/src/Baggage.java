@@ -1,15 +1,15 @@
 public class Baggage {
 
     private final double baggageWeight;
-    private Priority priority;
+    private BookingClass bookingClass;
 
-    public Baggage(double baggageWeight, Priority priority){
+    public Baggage(double baggageWeight, BookingClass bookingClass){
         this.baggageWeight = baggageWeight;
-        this.priority = priority;
+        this.bookingClass = bookingClass;
     }
 
-    public Priority getPriority() {
-        return priority;
+    public BookingClass getPriority() {
+        return bookingClass;
     }
 
     public double getBaggageWeight() {

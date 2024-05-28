@@ -49,11 +49,11 @@ public class BaggageLager {
 
     private int assignPriority(Baggage baggage){
         switch (baggage.getPriority()){
-            case Priority.BUSINESS:
+            case BookingClass.BUSINESS:
                 return 3;
-            case Priority.PREMIUM_ECONOMY:
+            case BookingClass.PREMIUM_ECONOMY:
                 return 2;
-            case Priority.ECONOMY:
+            case BookingClass.ECONOMY:
                 return 1;
             default: return 0;
         }

@@ -10,11 +10,12 @@ public class Ticket {
     private String to;
     private LocalTime departure;
     private LocalTime arrival;
-    private String bookingClass;
+    private BookingClass bookingClass;
     private String seat;
 
     public Ticket(String uuid, String bookingID, String flight, String from, String to,
-                  LocalTime departure, LocalTime arrival, String bookingClass, String seat){
+                  LocalTime departure, LocalTime arrival, BookingClass bookingClass, String seat){
+
         this.uuid = uuid;
         this.bookingID = bookingID;
         this.flight = flight;

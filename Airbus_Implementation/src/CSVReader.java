@@ -84,7 +84,7 @@ public class CSVReader {
         String[] weightToken = tokenArray[17].split(" ");
         for (int i = 0; i < baggageCount; i++) {
             double weight = Double.parseDouble(weightToken[i]);
-            baggages.add(new Baggage(weight, determinePriority(tokenArray[14])));
+            baggages.add(new Baggage(weight, determineBookingClass(tokenArray[14])));
         }
         //Iris
         String humaniris = tokenArray[6];
@@ -125,9 +125,8 @@ public class CSVReader {
         // arrival
         LocalTime arrival = convertOffset(tokenArray[13]) ;
 
-
         // bookingClass
-        String bookingClass = tokenArray[14];
+        BookingClass bookingClass = determineBookingClass(tokenArray[14]);
 
         //  seat
         String seat = tokenArray[15];
@@ -157,14 +156,14 @@ public class CSVReader {
         return arrival;
 
     }
-    private Priority determinePriority(String bookingClass){
+    private BookingClass determineBookingClass(String bookingClass){
         switch (bookingClass) {
             case "BUSINESS":
-                return Priority.BUSINESS;
+                return BookingClass.BUSINESS;
             case "PREMIUM_ECONOMY":
-                return Priority.PREMIUM_ECONOMY;
+                return BookingClass.PREMIUM_ECONOMY;
             default:
-                return Priority.ECONOMY;
+                return BookingClass.ECONOMY;
         }
     }
 
