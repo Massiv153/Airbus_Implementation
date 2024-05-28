@@ -25,10 +25,9 @@ public class Airport {
         checkInDesk = new CheckInDesk[10];
         Wartebereich[][] wartebereich = new Wartebereich[20][30];
         buildCheckInDesk();
-
+        generateWarteplaetze();
 
         joinWarteschlange();
-        generateWarteplaetze();
         leaveWarteschlange();
 
 
@@ -54,10 +53,11 @@ public class Airport {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 30; j++) {
                 Passenger leavingPassanger = checkInDesk[i].getWarteschlange().removeFromQueue();
-                if (leavingPassanger != null){
+                if (passenger != null) {
+                    checkInDesk[i].processPassenger(leavingPassanger);
                     chooseRandomPlace(leavingPassanger);
-
                 }
+
             }
         }
     }

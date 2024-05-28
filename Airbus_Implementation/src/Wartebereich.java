@@ -9,4 +9,6 @@ public class Wartebereich {
         this.isTaken = isTaken;
     }
 
+
+
 }

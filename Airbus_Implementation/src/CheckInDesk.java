@@ -26,11 +26,13 @@ public class CheckInDesk {
     }
 
 
-    public void processPassenger(Passenger passenger, FederalPoliceOfficer officer) {
+    public void processPassenger(Passenger passenger) {
+
         if (passenger.authenticateRandomly()) {
+            System.out.println("OO");
             switch (passenger.hasWarrant()){
                 case Warrent.YES:
-                    officer.arrestedPassengers(passenger);
+                    federalPoliceOfficer.arrestedPassengers(passenger);
                 case Warrent.NO:
                     for (Baggage baggage : passenger.getBaggageList()) {
                         conveyorBelt.processBaggage(baggage, printer, robotArm);
