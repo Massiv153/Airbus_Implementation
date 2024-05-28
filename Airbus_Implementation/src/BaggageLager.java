@@ -1,18 +1,15 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class BaggageLager {
     private final Baggage[][][] lager;
     private CheckInDesk checkInDesk;
     private Baggage baggage;
-    private final Container[] fullContainers;
-    private int fullContainerIndex;
-
-
+    private final List<Container> fullContainers;
+    
     public BaggageLager(){
         lager = new Baggage[10][10][5];
-        fullContainers = new Container[8];
-        int fullContainerIndex = 0;
-
+        fullContainers = new ArrayList<Container>();
 
     }
 
@@ -89,10 +86,10 @@ public class BaggageLager {
     }
 
     public void addFullContainer(Container container){
-        fullContainers[fullContainerIndex++] = container;
+        fullContainers.add(container);
     }
 
-    public Container[] getFullContainers(){
+    public List<Container> getFullContainers(){
         return fullContainers;
     }
 }
