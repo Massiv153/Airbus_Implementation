@@ -1,3 +1,0 @@
-public enum CabinType {
-    BUSINESS_CLASS, PREMIUM_ECONOMY, ECONOMY
-}
