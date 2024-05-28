@@ -1,15 +1,15 @@
-import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class ConveyorBelt {
     private CheckInDesk checkInDesk;
     private Baggage baggage;
 
-    public void processBaggage(Baggage baggage, Printer printer, AtomicInteger sequenceID) {
+    public void processBaggage(Baggage baggage, Printer printer, AtomicInteger sequenceID, RobotArm robotArm) {
         double weight = baggage.getBaggageWeight();
         BaggageTag tag = new BaggageTag(sequenceID.incrementAndGet());
         printer.printBaggageTag(tag);
 
+        robotArm.addBaggagetoLager();
     }
 
     public Baggage getBaggage(){

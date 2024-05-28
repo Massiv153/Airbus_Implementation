@@ -17,11 +17,10 @@ public class BaggageLager {
                         lager[i][j][k] = baggage;
                     }
                 }
-
             }
-
         }
     }
+
     public Baggage removeBaggage(){
         Baggage prioBaggage = sortContainers();
         baggage = prioBaggage;
@@ -30,7 +29,7 @@ public class BaggageLager {
 
     }
 
-    public Baggage sortContainers(){
+    private Baggage sortContainers(){
         Baggage highPrioBaggage = null;
         int highestPrio = 0;
         for (int i = 0; i < 10; i++) {

@@ -1,27 +1,48 @@
 public class RobotArm {
-    private ConveyorBelt conveyorBelt;
-    private BaggageLager baggageLager;
-    private Container [] containers;
-    public RobotArm(ConveyorBelt conveyorBelt, BaggageLager baggageLager, Container [] containers){
+    private final ConveyorBelt conveyorBelt;
+    private final BaggageLager baggageLager;
+    private final ContainerLagerLeer containerLagerLeer;
+    private Container container;
+
+    public RobotArm(ConveyorBelt conveyorBelt, BaggageLager baggageLager, ContainerLagerLeer containerLagerLeer){
         this.conveyorBelt = conveyorBelt;
-        this.containers = containers;
         this.baggageLager = baggageLager;
+        this.containerLagerLeer = containerLagerLeer;
+        container = takeContainer();
+
     }
     public void addBaggagetoLager(){
         if (conveyorBelt.getBaggage() != null){
             conveyorBelt.removeBaggage();
             baggageLager.addBaggage(conveyorBelt.getBaggage());
+            addBaggagetoContainer();
         }
+
     }
 
-    public void addBaggagetoContainer(Container[] containers){
+    public void addBaggagetoContainer(){
         Baggage baggage = baggageLager.removeBaggage();
-        for (int i = 0; i< 8; i++) {
-            if (!containers[i].isFull()) {
-                containers[i].storeBaggage(baggage);
-            }
+        if (container != null && !container.isFull()){
+            container.push(baggage);
+        } else if (container != null && container.isFull()) {
+            container = takeContainer();
+            container.push(baggage);
+        } else {
+            System.out.println("Alle Container voll");
         }
+
     }
 
+    private Container takeContainer(){
+        if (containerLagerLeer.getContainer() != null) {
+            container = containerLagerLeer.getContainer();
+            containerLagerLeer.removeContainer();
+            return container;
+        }
+        else {
+            System.out.println("Keine Container mehr vorhanden");
+            return null;
+        }
+    }
 
 }
