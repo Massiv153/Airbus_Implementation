@@ -4,11 +4,11 @@ public class Cabin {
     private CabinType cabinType;
     private int startRow;
     private int endRow;
-    private char[] letters;
+    private String[] letters;
     private int seatsOverall;
     private ArrayList<Seat> seats;
 
-    public Cabin(CabinType cabinType, int startRow, int endRow, char[] seats, int seatsOverall){
+    public Cabin(CabinType cabinType, int startRow, int endRow, String[] seats, int seatsOverall){
         this.seats = new ArrayList<Seat>();
         this.cabinType = cabinType;
         this.startRow = startRow;
@@ -17,7 +17,7 @@ public class Cabin {
         this.seatsOverall = seatsOverall;
 
         for (int i = startRow; i < endRow; i++) {
-            for (char c: seats){
+            for (String c: seats){
                 this.seats.add(new Seat(i,c));
             }
         }
